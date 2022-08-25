@@ -14,6 +14,9 @@
               <v-text-field
                   placeholder="Contraseña"
                   filled
+                    :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                  @click:append="() => (value = !value)"
+                  :type="value ? 'password' : 'text'"
               ></v-text-field>
              </v-col>
           </div>
@@ -79,5 +82,14 @@
 .input-group--text-field label {
   left: -15%;
 }
-
 </style>
+
+<script>
+  export default {
+    data() {
+      return {
+        value: String,
+      };
+    },
+  };
+</script>
