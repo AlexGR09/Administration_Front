@@ -1,21 +1,23 @@
 <template>
-  <v-app>
-    <SideBar />
-    <v-main>
-      <router-view>
-        
-      </router-view>
-    </v-main>
-  </v-app>
+  <v-fade-transition mode="out-in">
+    <router-view />
+  </v-fade-transition>
 </template>
 
 <script>
-import SideBar from "./components/SideBar.vue";
-export default {
-  name: 'App',
-    setup() {
+  // Styles
+  import '@/styles/overrides.sass'
+
+  export default {
+    name: 'App',
+    metaInfo: {
+      title: 'App',
+      titleTemplate: '%s | Material Dashboard Free',
+      htmlAttrs: { lang: 'en' },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
     },
-    components: { SideBar },
-    data: () => ({}),
-};
+  }
 </script>
