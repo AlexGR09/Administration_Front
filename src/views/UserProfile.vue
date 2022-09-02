@@ -909,9 +909,6 @@
         expande: false,
         includeFiles: true,
         enabled: false,
-        vue: {
-          exp: null,
-        },
       }
     },
   }
