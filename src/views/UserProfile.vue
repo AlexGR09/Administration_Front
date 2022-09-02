@@ -16,16 +16,13 @@
           <template #title>
             Cuestionario — <small class="text-body-1">Completa con tus datos</small>
           </template>
-
           <v-form>
             <v-container class="py-0">
               <v-row>
-
                 <v-col
                   cols="12"
                   class="text-center"
                 >
-                 
                   <v-stepper v-model="e1">
       <v-stepper-header>
         <v-stepper-step
@@ -34,31 +31,24 @@
         >
           Datos Generales
         </v-stepper-step>
-  
         <v-divider></v-divider>
-  
         <v-stepper-step
           :complete="e1 > 2"
           step="2"
         >
           Datos fiscales
         </v-stepper-step>
-  
         <v-divider></v-divider>
-  
         <v-stepper-step step="3">
           Datos Cofepris
         </v-stepper-step>
         <v-divider></v-divider>
-  
         <v-stepper-step step="4">
           Final
         </v-stepper-step>
       </v-stepper-header>
-  
       <v-stepper-items>
         <v-stepper-content step="1">
-          
           <v-row>
                 <v-col
                   cols="4"
@@ -80,7 +70,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="3"
@@ -101,7 +90,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="6"
@@ -112,7 +100,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="6"
@@ -123,7 +110,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="4"
@@ -134,9 +120,10 @@
                     filled
                   />
                 </v-col>
-
-                <v-col cols="12"
-                  md="8">
+                <v-col
+                  cols="12"
+                  md="8"
+                  >
                   <v-text-field
                     color="purple"
                     label="Correo electrónico"
@@ -154,7 +141,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="4"
@@ -166,7 +152,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="4"
@@ -178,7 +163,6 @@
                     filled
                   />
                 </v-col>
-
                 <v-col
                   cols="12"
                   md="6"
@@ -216,7 +200,6 @@
                   md="6"
                 >
                 <p class="text-left">{{ radios || 'Genero' }}</p>
-                
                 <v-radio-group
                     v-model="row"
                     row
@@ -235,24 +218,16 @@
                     ></v-radio>
                   </v-radio-group>
                 </v-col>
-
           </v-row>
-       
-  
           <v-btn
             color="primary"
             @click="e1 = 2"
           >
             Continue
           </v-btn>
-  
-         
         </v-stepper-content>
-  
         <v-stepper-content step="2">
-
           <!--   -------------------------Persona fisica y moral------------------ -->
-        
           <v-tabs
             v-model="tabs"
             centered
@@ -263,7 +238,7 @@
       <v-tabs-items v-model="tabs">
         <v-tab-item>
           <v-row>
-            <br></br>
+            <br>
               <v-col
                   cols="12"
                   md="6"
@@ -324,12 +299,10 @@
                     filled
                   />
                 </v-col>
-                  
-                
                 <v-card-text>
                   <p class="text-CENTER">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
-                        <v-row >
-                          <v-col 
+                        <v-row>
+                          <v-col
                           cols="12"
                           md="1"
                         >
@@ -337,24 +310,21 @@
                                 label="Si"
                                   v-model="enabled"
                                   class="shrink mr-2 mt-0"
-                                  
                               ></v-checkbox>
                             </v-col>
-                            <v-col 
-                          cols="12"
-                          md="4"
-                        >
+                            <v-col
+                              cols="12"
+                              md="4"
+                            >
                           <v-file-input
                               :disabled="!enabled"
                               label="Subir documento PDF"
                               outlined
-                              filled  
+                              filled
                               dense
-                              
                     ></v-file-input>
                             </v-col>
-                       
-                              <v-col 
+                              <v-col
                                 cols="12"
                                 md="3"
                               >
@@ -366,7 +336,7 @@
                                   ></v-checkbox>
                               </v-col>
 
-                              <v-col 
+                              <v-col
                                 cols="12"
                                 md="3"
                               >
@@ -378,7 +348,6 @@
                                   ></v-checkbox>
                               </v-col>
                         </v-row>
-                        
                 </v-card-text>
                 <v-col
                   cols="12"
@@ -511,9 +480,7 @@
                   />
                 </v-col>
               </v-row>
-              
         </v-tab-item>
-
    <!-- ------------------Persona moral------------------------- -->
         <v-tab-item>
          <v-row>
@@ -551,8 +518,8 @@
                 </v-col>
                 <v-card-text>
                   <p class="text-CENTER">{{ radios || '¿Cuenta con Constancia de Situación Fiscal actualizada?' }}</p>
-                        <v-row >
-                          <v-col 
+                        <v-row>
+                          <v-col
                           cols="12"
                           md="1"
                         >
@@ -560,24 +527,21 @@
                                 label="Si"
                                   v-model="enabled"
                                   class="shrink mr-2 mt-0"
-                                  
                               ></v-checkbox>
                             </v-col>
-                            <v-col 
-                          cols="12"
-                          md="4"
-                        >
+                            <v-col
+                              cols="12"
+                              md="4"
+                            >
                           <v-file-input
                               :disabled="!enabled"
                               label="Subir documento PDF"
                               outlined
-                              filled  
+                              filled
                               dense
-                              
                     ></v-file-input>
                             </v-col>
-                       
-                              <v-col 
+                              <v-col
                                 cols="12"
                                 md="3"
                               >
@@ -588,8 +552,7 @@
                                     class="shrink mr-2 mt-0"
                                   ></v-checkbox>
                               </v-col>
-
-                              <v-col 
+                              <v-col
                                 cols="12"
                                 md="3"
                               >
@@ -601,12 +564,10 @@
                                   ></v-checkbox>
                               </v-col>
                         </v-row>
-                        
                 </v-card-text>
          </v-row>
         </v-tab-item>
       </v-tabs-items>
-    
           <v-btn
             color="primary"
             @click="e1 = 3"
@@ -615,12 +576,11 @@
           </v-btn>
 
           <v-btn
-            @click="e1 = 1">
+            @click="e1 = 1"
+            >
             Atras
           </v-btn>
-       
         </v-stepper-content>
-  
         <v-stepper-content step="3">
           <v-row>
             <v-col
@@ -653,11 +613,10 @@
                     filled
                   />
                 </v-col>
-                
                 <v-card-text>
                 <p class="text-CENTER">{{ radios || '¿Cuenta con logotipo original y propio?' }}</p>
-                        <v-row >
-                          <v-col 
+                        <v-row>
+                          <v-col
                           cols="12"
                           md="1"
                         >
@@ -665,24 +624,21 @@
                                 label="Si"
                                   v-model="enabled"
                                   class="shrink mr-2 mt-0"
-                                  
                               ></v-checkbox>
                             </v-col>
-                            <v-col 
+                            <v-col
                           cols="12"
                           md="6"
-                        >
+                          >
                           <v-file-input
-                          
                               :disabled="!enabled"
                               label="Subir documento PDF"
                               outlined
-                              filled  
+                              filled
                               dense
-                              
                     ></v-file-input>
                             </v-col>
-                            <v-col 
+                            <v-col
                                 cols="12"
                                 md="2"
                               >
@@ -693,7 +649,7 @@
                                     class="shrink mr-2 mt-0"
                                   ></v-checkbox>
                               </v-col>
-                              <v-col 
+                              <v-col
                                 cols="12"
                                 md="2"
                               >
@@ -706,13 +662,11 @@
                               </v-col>
                             </v-row>
                           </v-card-text>
-                          
                           <v-col
                   cols="12"
                   md="4"
                 >
                 <p class="text-left">{{ radios || '¿Ha sido notificado por COFEPRIS?' }}</p>
-                
                 <v-radio-group
                     v-model="row"
                     row
@@ -732,7 +686,6 @@
                   md="4"
                 >
                 <p class="text-left">{{ radios || '¿Cuenta con aviso de funcionamiento?' }}</p>
-                
                 <v-radio-group
                     v-model="row"
                     row
@@ -752,7 +705,6 @@
                   md="4"
                 >
                 <p class="text-left">{{ radios || '¿Cuenta con cédula profesional?' }}</p>
-                
                 <v-radio-group
                     v-model="row"
                     row
@@ -777,7 +729,6 @@
                   md="5"
                 >
                 <p class="text-left">{{ radios || '¿Cuenta con redes sociales comerciales?' }}</p>
-                
                 <v-radio-group
                     v-model="row"
                     row
@@ -786,11 +737,9 @@
                       label="Si"
                       @click="expandi = !expandi"
                     ></v-radio>
-
                     <v-radio
                       label="No"
                     ></v-radio>
-
                   </v-radio-group>
                 </v-col>
                 <v-col
@@ -812,11 +761,11 @@
                     ></v-radio>
                   </v-radio-group>
                 </v-col>
-                <v-col 
+                <v-col
                     cols="12"
                     md="3"
                   ></v-col>
-                <v-col 
+                <v-col
                     cols="12"
                     md="2"
                   >
@@ -827,9 +776,8 @@
                         label="Facebook "
                         class="shrink mr-2 mt-0"
                       ></v-checkbox>
-                      
                   </v-col>
-                  <v-col 
+                  <v-col
                     cols="12"
                     md="3"
                   >
@@ -840,9 +788,7 @@
                         label="Instagram "
                         class="shrink mr-2 mt-0"
                       ></v-checkbox>
-                      
                   </v-col>
-                
                 <v-col
                   cols="12"
                   md="4"
@@ -854,7 +800,6 @@
                     dense
                     filled
                   ></v-text-field></v-col>
-                  
           </v-row>
           <v-btn
             color="primary"
@@ -862,9 +807,9 @@
           >
             Continue
           </v-btn>
-  
           <v-btn
-            @click="e1 = 2">
+            @click="e1 = 2"
+            >
             Atras
           </v-btn>
         </v-stepper-content>
@@ -877,25 +822,22 @@
               full-width
               filled
             ></v-textarea>
-
-            <v-col 
+            <v-col
               cols="12"
               md="12"
             >
             <v-form
             ref="form"
       v-model="valid"
-      lazy-validation>
-
+      lazy-validation
+      >
       <v-switch
       v-model="name"
         :rules="nameRules"
         required
-             
-                      :label="`Estoy de acuerdo con que esta información será tratada con plena confidencialidad por parte de Guía Salud.`"
-                ></v-switch>
+        :label="`Estoy de acuerdo con que esta información será tratada con plena confidencialidad por parte de Guía Salud.`"
+      ></v-switch>
             </v-form>
-                
             </v-col>
 <v-btn
   color="primary"
@@ -904,7 +846,8 @@
 </v-btn>
 
 <v-btn
-  @click="e1 = 1">
+  @click="e1 = 1"
+  >
   Atras
 </v-btn>
 </v-stepper-content>
@@ -955,16 +898,12 @@
     </v-row>
   </v-container>
 </template>
-
-
 <script>
-  
   export default {
     data () {
-      
       return {
         tabs: null,
-        e1: 1, 
+        e1: 1,
         expand: false,
         expandi: false,
         expande: false,
@@ -972,10 +911,8 @@
         enabled: false,
         vue: {
           exp: null,
-        }
+        },
       }
     },
-    
   }
-  
 </script>

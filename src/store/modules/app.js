@@ -14,8 +14,13 @@ const state = {
     },
     {
       title: 'Cuestionario',
-      icon: 'mdi-account',
+      icon: 'mdi-file-document',
       to: '/components/profile/',
+    },
+    {
+      title: 'Crear cliente',
+      icon: 'mdi-account',
+      to: '/components/newuser/',
     },
     {
       title: 'Notificaciones',
