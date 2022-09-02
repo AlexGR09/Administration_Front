@@ -31,79 +31,14 @@
                                             step="1"
                                             complete
                                         >
-                                            Name of step 1
+                                            Información personal
                                         </v-stepper-step>
                                     
                                         <v-stepper-content step="1">
                                             <v-card
-                                            color="grey lighten-1"
-                                            class="mb-12"
-                                            height="200px"
-                                            ></v-card>
-                                            <v-btn
-                                            color="primary"
-                                            @click="e13 = 2"
                                             >
-                                            Continue
-                                            </v-btn>
-                                            
-                                        </v-stepper-content>
-                                    
-                                        <v-stepper-step
-                                            step="2"
-                                            complete
-                                        >
-                                            Name of step 2
-                                        </v-stepper-step>
-                                    
-                                        <v-stepper-content step="2">
-                                            <v-card
-                                            color="grey lighten-1"
-                                            class="mb-12"
-                                            height="200px"
-                                            ></v-card>
-                                            <v-btn
-                                            color="primary"
-                                            @click="e13 = 3"
-                                            >
-                                            Continue
-                                            </v-btn>
-                                            <v-btn
-                                            color="primary"
-                                            @click="e13 = 1"
-                                            >
-                                            atras
-                                            </v-btn>
-                                        </v-stepper-content>
-                                    
-                                        <v-stepper-step
-                                            step="3"
-                                        >
-                                            Ad templates
-                                        </v-stepper-step>
-                                    
-                                        <v-stepper-content step="3">
-                                            <v-card
-                                            color="grey lighten-1"
-                                            class="mb-12"
-                                            height="200px"
-                                            ></v-card>
-                                            <v-btn
-                                            color="primary"
-                                            @click="e13 = 4"
-                                            >
-                                            Finalizar
-                                            </v-btn>
-                                            <v-btn
-                                            color="primary"
-                                            @click="e13 = 2"
-                                            >
-                                            atras
-                                            </v-btn>
-                                        </v-stepper-content>
-                                        </v-stepper>
-                                        </v-col><!-- 
-                                            <v-col
+                                            <v-row>
+                                                <v-col
                                                 cols="12"
                                                 md="2"
                                             >
@@ -240,7 +175,27 @@
                                                 filled
                                             />
                                             </v-col>
-                                            <v-col
+                                        </v-row>
+                                        </v-card>
+                                            <v-btn
+                                            color="primary"
+                                            @click="e13 = 2"
+                                            >
+                                            Continue
+                                            </v-btn>
+                                            
+                                        </v-stepper-content>
+                                    
+                                        <v-stepper-step
+                                            step="2"
+                                            complete
+                                        >
+                                            Datos de usuario
+                                        </v-stepper-step>
+                                    
+                                        <v-stepper-content step="2">
+                                            <v-row>
+                                                <v-col
                                                 cols="4"
                                                 md="6"
                                             >
@@ -265,6 +220,68 @@
                                             </v-col>
                                             <v-col
                                                 cols="4"
+                                                md="6"
+                                            >
+                                            <v-file-input
+                                                label="File input"
+                                                filled
+                                                ></v-file-input>
+                                            </v-col>
+                                            <v-col
+                                                cols="12"
+                                                md="3"
+                                            >
+                                            <v-autocomplete
+                                                :items="alcance"
+                                                dense
+                                                filled
+                                                label="Alcance"
+                                                ></v-autocomplete>
+                                            </v-col>
+                                            <v-col
+                                                cols="12"
+                                                md="3"
+                                            >
+                                            <v-autocomplete
+                                                :items="tipo"
+                                                dense
+                                                filled
+                                                label="Tipo"
+                                                ></v-autocomplete>
+                                            </v-col>
+                                            <v-col
+                                                cols="4"
+                                                md="6"
+                                            >                   
+                                                <v-menu
+                                                v-model="menu2"
+                                                :close-on-content-click="false"
+                                                :nudge-right="40"
+                                                transition="scale-transition"
+                                                offset-y
+                                                min-width="auto"
+                                                >
+                                                <template v-slot:activator="{ on, attrs }">
+                                                    <v-text-field
+                                                    v-model="date"
+                                                    label="Fecha de nacimiento"
+                                                    prepend-icon="mdi-calendar"
+                                                    readonly
+                                                    v-bind="attrs"
+                                                    v-on="on"
+                                                    ></v-text-field>
+                                                </template>
+                                                <v-date-picker
+                                                    v-model="date"
+                                                    @input="menu2 = false"
+                                                ></v-date-picker>
+                                                </v-menu>
+                                            
+                                            </v-col>
+                                            </v-row>
+                                            
+                                            <!-- <v-col
+                                                cols="4"
                                                 md="11"
                                             >
                                             <v-switch
@@ -275,6 +292,48 @@
                                                 :label="`Estoy de acuerdo con enviar mis datos en el entendimiento de que serán tratados con la total confidencialidad por Guía Salud y que no serán compartidos a terceros, ni revelados, a menos que haya una requisición jurídica de por medio.`"
                                                 ></v-switch>
                                                 </v-col> -->
+                                            <v-btn
+                                            color="primary"
+                                            @click="e13 = 3"
+                                            >
+                                            Continue
+                                            </v-btn>
+                                            <v-btn
+                                            color="primary"
+                                            @click="e13 = 1"
+                                            >
+                                            atras
+                                            </v-btn>
+                                        </v-stepper-content>
+                                    
+                                        <v-stepper-step
+                                            step="3"
+                                        >
+                                            Ad templates
+                                        </v-stepper-step>
+                                    
+                                        <v-stepper-content step="3">
+                                            <v-card
+                                            color="grey lighten-1"
+                                            class="mb-12"
+                                            height="200px"
+                                            ></v-card>
+                                            <v-btn
+                                            color="primary"
+                                            @click="e13 = 4"
+                                            >
+                                            Finalizar
+                                            </v-btn>
+                                            <v-btn
+                                            color="primary"
+                                            @click="e13 = 2"
+                                            >
+                                            atras
+                                            </v-btn>
+                                        </v-stepper-content>
+                                        </v-stepper>
+                                        </v-col>
+                                            
                                     </v-row>
                                     </v-container>
                                 </v-form>
@@ -289,7 +348,13 @@
             e13: 2,
             titulos: ['Dr.', 'Dra.', 'Lic.', 'QFB','Ing'],
             especialidades: ['Acupuntura', 'Alergología', 'Anatomopatología', 'Anestesiología','Angiología','Audiología','Cardiología','Cardiología Pediátrica','Cirugía Cardiovascular y Torácica','Cirugía de la Mano','Cirugía Estética y Cosmética','Cirugía General','Cirugía Maxilofacial','Cirugía Oncológica','Cirugía Pediátrica','Cirugía Plástica','Dermatología','Dermatología Pediátrica','Diabetología','Endocrinología','Endoscopía','Enfermería','Fisioterapia','Gastroenterología','Gastroenterología Pediátrica','Genética','Geriatría','Ginecología Oncológica','Ginecología y Obstetricia','Hematología','Hematología Pediátrica','Homeopatía','Infectología','Infectología Pediátrica','Inmunología','Laboratorios Análisis Clínicos','Logopedia','Terapia Complementaria','Medicina Crítica y Terapia Intensiva','Medicina del Deporte','Medicina del Trabajo','Medicina Estética','Medicina Familiar','Medicina General','Medicina Integrada','Medicina Interna','Medicina Nuclear','Naturismo','Nefrología','Nefrología pediátrica','Neonatología','Neumología','Neumología pediátrica','Neurocirugía','Neurofisiología','Neurología','Neurología pediátrica','Nutrición','Nutriología clínica','Obesidad y delgadez','Odontología','Oftalmología','Oftalmología pediátrica','Oncología','Oncología pediátrica','Optometrismo','Ortopedia','Ortopedia infantil','Otorrinolaringología','Patología clínica','Pediatría','Podiatría','Podología','Proctología','Psicoanálisis','Psicología','Psicopedagogía','Psiquiatría','Psiquiatría infantil','Quiropráctica','Radiología','Radioterapia','Rehabilitación y Medicina física','Reumatología','Sexología','Algología','Traumatología y Ortopedia','Urgenciología','Urología','Reumatología pediátrica','Urología pediátrica','Cirugía Torácica','Radiooncología','Epidemiología','Odontología pediátrica','Cirugía Bariátrica','Foniatría','Otorrinolaringología pediátrica','Patología bucal','Alergología Pediátrica','Alergología e Inmunología','Bariatría','Coloproctología','Gastroenterología Endoscópica','Radiología Intervencionista','Spa'],
+            alcance: ['Cliente','Externo','Interno'],
+            tipo: ['Auxiliar publicitario','Médico','Propietario'],
             value: null,
+            date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+                menu: false,
+                modal: false,
+                menu2: false,
         }
         ),
         
