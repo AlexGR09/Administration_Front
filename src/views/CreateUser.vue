@@ -283,8 +283,6 @@
                                             >
                                             Continue
                                             </v-btn>
-                                        </br>
-                                    </br>
                                         <v-divider></v-divider>
                                         </v-card>
                                         </v-stepper-content>
@@ -436,8 +434,6 @@
                                             >
                                             atras
                                             </v-btn>
-                                        </br>
-                                    </br>
                                         <v-divider></v-divider>
                                         </v-stepper-content>
                                         <v-stepper-step
@@ -640,23 +636,20 @@
     </v-container>
 </template>
 <script>
-    export default {
-        data: () => ({
-            e13: 1,
-            titulos: ['Dr.', 'Dra.', 'Lic.', 'QFB', 'Ing'], 
-            especialidades: ['Acupuntura', 'Alergología', 'Anatomopatología', 'Anestesiología', 'Angiología', 'Audiología', 'Cardiología', 'Cardiología Pediátrica', 'Cirugía Cardiovascular y Torácica', 'Cirugía de la Mano', 'Cirugía Estética y Cosmética', 'Cirugía General', 'Cirugía Maxilofacial', 'Cirugía Oncológica', 'Cirugía Pediátrica', 'Cirugía Plástica', 'Dermatología', 'Dermatología Pediátrica', 'Diabetología', 'Endocrinología', 'Endoscopía', 'Enfermería', 'Fisioterapia', 'Gastroenterología', 'Gastroenterología Pediátrica', 'Genética', 'Geriatría', 'Ginecología Oncológica', 'Ginecología y Obstetricia', 'Hematología', 'Hematología Pediátrica', 'Homeopatía', 'Infectología', 'Infectología Pediátrica', 'Inmunología', 'Laboratorios Análisis Clínicos', 'Logopedia', 'Terapia Complementaria', 'Medicina Crítica y Terapia Intensiva', 'Medicina del Deporte', 'Medicina del Trabajo', 'Medicina Estética', 'Medicina Familiar', 'Medicina General', 'Medicina Integrada', 'Medicina Interna', 'Medicina Nuclear', 'Naturismo', 'Nefrología', 'Nefrología pediátrica', 'Neonatología', 'Neumología', 'Neumología pediátrica', 'Neurocirugía', 'Neurofisiología', 'Neurología', 'Neurología pediátrica', 'Nutrición', 'Nutriología clínica', 'Obesidad y delgadez', 'Odontología', 'Oftalmología', 'Oftalmología pediátrica', 'Oncología', 'Oncología pediátrica', 'Optometrismo', 'Ortopedia', 'Ortopedia infantil', 'Otorrinolaringología', 'Patología clínica', 'Pediatría', 'Podiatría', 'Podología', 'Proctología', 'Psicoanálisis', 'Psicología', 'Psicopedagogía', 'Psiquiatría', 'Psiquiatría infantil', 'Quiropráctica', 'Radiología', 'Radioterapia', 'Rehabilitación y Medicina física', 'Reumatología', 'Sexología', 'Algología', 'Traumatología y Ortopedia', 'Urgenciología', 'Urología', 'Reumatología pediátrica', 'Urología pediátrica', 'Cirugía Torácica', 'Radiooncología', 'Epidemiología', 'Odontología pediátrica', 'Cirugía Bariátrica', 'Foniatría', 'Otorrinolaringología pediátrica', 'Patología bucal', 'Alergología Pediátrica', 'Alergología e Inmunología', 'Bariatría', 'Coloproctología', 'Gastroenterología Endoscópica', 'Radiología Intervencionista', 'Spa'],
-            alcance: ['Cliente', 'Externo', 'Interno'], 
-            tipo: ['Auxiliar publicitario', 'Médico', 'Propietario'], 
-            value: null,
-            date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-                menu: false,
-                modal: false,
-                menu2: false,
-                
-        }
-        ),
-        
-    }
+  export default {
+    data: () => ({
+      e13: 1,
+      titulos: ['Dr.', 'Dra.', 'Lic.', 'QFB', 'Ing'],
+      especialidades: ['Acupuntura', 'Alergología', 'Anatomopatología', 'Anestesiología', 'Angiología', 'Audiología', 'Cardiología', 'Cardiología Pediátrica', 'Cirugía Cardiovascular y Torácica', 'Cirugía de la Mano', 'Cirugía Estética y Cosmética', 'Cirugía General', 'Cirugía Maxilofacial', 'Cirugía Oncológica', 'Cirugía Pediátrica', 'Cirugía Plástica', 'Dermatología', 'Dermatología Pediátrica', 'Diabetología', 'Endocrinología', 'Endoscopía', 'Enfermería', 'Fisioterapia', 'Gastroenterología', 'Gastroenterología Pediátrica', 'Genética', 'Geriatría', 'Ginecología Oncológica', 'Ginecología y Obstetricia', 'Hematología', 'Hematología Pediátrica', 'Homeopatía', 'Infectología', 'Infectología Pediátrica', 'Inmunología', 'Laboratorios Análisis Clínicos', 'Logopedia', 'Terapia Complementaria', 'Medicina Crítica y Terapia Intensiva', 'Medicina del Deporte', 'Medicina del Trabajo', 'Medicina Estética', 'Medicina Familiar', 'Medicina General', 'Medicina Integrada', 'Medicina Interna', 'Medicina Nuclear', 'Naturismo', 'Nefrología', 'Nefrología pediátrica', 'Neonatología', 'Neumología', 'Neumología pediátrica', 'Neurocirugía', 'Neurofisiología', 'Neurología', 'Neurología pediátrica', 'Nutrición', 'Nutriología clínica', 'Obesidad y delgadez', 'Odontología', 'Oftalmología', 'Oftalmología pediátrica', 'Oncología', 'Oncología pediátrica', 'Optometrismo', 'Ortopedia', 'Ortopedia infantil', 'Otorrinolaringología', 'Patología clínica', 'Pediatría', 'Podiatría', 'Podología', 'Proctología', 'Psicoanálisis', 'Psicología', 'Psicopedagogía', 'Psiquiatría', 'Psiquiatría infantil', 'Quiropráctica', 'Radiología', 'Radioterapia', 'Rehabilitación y Medicina física', 'Reumatología', 'Sexología', 'Algología', 'Traumatología y Ortopedia', 'Urgenciología', 'Urología', 'Reumatología pediátrica', 'Urología pediátrica', 'Cirugía Torácica', 'Radiooncología', 'Epidemiología', 'Odontología pediátrica', 'Cirugía Bariátrica', 'Foniatría', 'Otorrinolaringología pediátrica', 'Patología bucal', 'Alergología Pediátrica', 'Alergología e Inmunología', 'Bariatría', 'Coloproctología', 'Gastroenterología Endoscópica', 'Radiología Intervencionista', 'Spa'],
+      alcance: ['Cliente', 'Externo', 'Interno'],
+      tipo: ['Auxiliar publicitario', 'Médico', 'Propietario'],
+      value: null,
+      date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+      menu: false,
+      modal: false,
+      menu2: false,
+    }),
+  }
   </script>
 <style>
     c{
