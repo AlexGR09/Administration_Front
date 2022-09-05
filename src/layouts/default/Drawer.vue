@@ -12,7 +12,7 @@
       <default-drawer-header />
 
       <v-divider class="mx-3 mb-2" />
-
+      <v-subheader>VENTAS</v-subheader>
       <default-list :items="items" />
     </div>
 

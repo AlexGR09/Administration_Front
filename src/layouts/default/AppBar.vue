@@ -7,7 +7,7 @@
     color="transparent"
     :clipped-left="$vuetify.rtl"
     :clipped-right="!$vuetify.rtl"
-    height="70"
+    height="60"
     flat
   >
     <v-app-bar-nav-icon

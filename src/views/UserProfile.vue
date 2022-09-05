@@ -58,6 +58,7 @@
                     color="purple"
                     label="Titulo"
                     filled
+                    hide-details
                   />
                 </v-col>
                 <v-col
@@ -68,6 +69,7 @@
                     color="purple"
                     label="Nombre(s)"
                     filled
+                    hide-details
                   />
                 </v-col>
                 <v-col
@@ -76,6 +78,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Apellido Paterno"
                     filled
                   />
@@ -86,6 +89,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Apellido Materno"
                     filled
                   />
@@ -96,6 +100,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Especialidad(es)"
                     filled
                   />
@@ -106,6 +111,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Otra (subespecialidad o diplomado)"
                     filled
                   />
@@ -116,6 +122,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Telefono"
                     filled
                   />
@@ -126,6 +133,7 @@
                   >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Correo electrónico"
                     filled
                   />
@@ -136,6 +144,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Estado"
                     type="number"
                     filled
@@ -147,6 +156,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Municipio"
                     type="number"
                     filled
@@ -158,6 +168,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Ciudad"
                     type="number"
                     filled
@@ -180,6 +191,7 @@
                             v-model="date"
                             label="Fecha de nacimiento"
                             prepend-icon="mdi-calendar"
+                            hide-details
                             readonly
                             filled
                             v-bind="attrs"
@@ -202,6 +214,7 @@
                 <p class="text-left">{{ radios || 'Genero' }}</p>
                 <v-radio-group
                     v-model="row"
+                    hide-details
                     row
                   >
                     <v-radio
@@ -244,6 +257,7 @@
                   md="6"
                 >
                   <v-text-field
+                  hide-details
                     color="purple"
                     label="Nombre(s)"
                     filled
@@ -255,6 +269,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Apellido paterno"
                     filled
                   />
@@ -265,6 +280,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Apellido materno"
                     filled
                   />
@@ -275,6 +291,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="RFC Persona Física"
                     filled
                   />
@@ -285,6 +302,7 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="CURP"
                     filled
                   />
@@ -295,7 +313,151 @@
                 >
                   <v-text-field
                     color="purple"
+                    hide-details
                     label="Correo electrónico fiscal"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Tipo vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="5"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Nombre vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="2"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Num Ext"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="2"
+                >
+                  <v-text-field
+                  hide-details
+                    color="purple"
+                    label="Num Int"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                  hide-details
+                    color="purple"
+                    label="Entre (vialidad)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="5"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Nombre vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                  hide-details
+                    color="purple"
+                    label="Y (vialidad)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="5"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Nombre vialidad"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="3"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Colonia (tipo)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Colonia (nombre)"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Estado"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Municipio"
+                    filled
+                  />
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    color="purple"
+                    hide-details
+                    label="Ciudad"
                     filled
                   />
                 </v-col>
@@ -349,136 +511,6 @@
                               </v-col>
                         </v-row>
                 </v-card-text>
-                <v-col
-                  cols="12"
-                  md="3"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Tipo vialidad"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="5"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Nombre vialidad"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="2"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Num Ext"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="2"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Num Int"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="3"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Entre (vialidad)"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="5"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Nombre vialidad"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Y (vialidad)"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="5"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Nombre vialidad"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="3"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Colonia (tipo)"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Colonia (nombre)"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Estado"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Municipio"
-                    filled
-                  />
-                </v-col>
-                <v-col
-                  cols="12"
-                  md="4"
-                >
-                  <v-text-field
-                    color="purple"
-                    label="Ciudad"
-                    filled
-                  />
-                </v-col>
               </v-row>
         </v-tab-item>
    <!-- ------------------Persona moral------------------------- -->
@@ -574,7 +606,18 @@
           >
             Continue
           </v-btn>
-
+            <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
           <v-btn
             @click="e1 = 1"
             >
@@ -807,6 +850,18 @@
           >
             Continue
           </v-btn>
+          <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
           <v-btn
             @click="e1 = 2"
             >
@@ -844,7 +899,18 @@
 >
   Finalizar
 </v-btn>
-
+<v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
+              <v-divider
+              vertical
+              ></v-divider>
 <v-btn
   @click="e1 = 1"
   >

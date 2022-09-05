@@ -3,13 +3,13 @@
     <v-list-item-avatar>
       <v-img
         :src="
-          require('@/assets/man.png')"
+          require('@/assets/MARKy.png')"
       />
     </v-list-item-avatar>
 
     <v-list-item-content class="pl-2">
       <v-list-item-title class="text-h3">
-        <strong class="mr-1 font-weight-black">NOM</strong>
+        <strong class="mr-1 font-weight-black">MARKY</strong>
 
         <span class="primary--text">APP</span>
       </v-list-item-title>
