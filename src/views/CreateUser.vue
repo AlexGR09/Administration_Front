@@ -1,4 +1,5 @@
 <template>
+   <div class ="new">
     <v-container
         id="create-user-view"
         fluid
@@ -634,6 +635,8 @@
             </v-col>
             </v-row>
     </v-container>
+  <ventas-dashboard />
+    </div>
 </template>
 <script>
   export default {

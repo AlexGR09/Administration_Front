@@ -1,4 +1,5 @@
 <template>
+<div class ="noti">
   <v-container
     id="alerts"
     fluid
@@ -280,12 +281,17 @@
       </v-card>
     </v-dialog>
   </v-container>
+  <ventas-dashboard />
+</div>
 </template>
 
 <script>
+  import VentasDashboard from '@/components/VentasDashboard.vue'
   export default {
     name: 'NotificationsView',
-
+    components: {
+      VentasDashboard,
+    },
     data: () => ({
       color: 'info',
       colors: [

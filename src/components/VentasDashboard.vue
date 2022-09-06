@@ -132,7 +132,7 @@
         right: null,
       }
     },
-    name: 'MiComponente',
+    name: 'VentasDashboard',
     computed: {
       ...get('user', [
         'dark',

@@ -1,4 +1,5 @@
 <template>
+  <div class ="user">
   <v-container
     id="user-profile-view"
     fluid
@@ -963,9 +964,15 @@
       </v-col>
     </v-row>
   </v-container>
+  <ventas-dashboard />
+  </div>
 </template>
 <script>
+  import VentasDashboard from '@/components/VentasDashboard.vue'
   export default {
+    components: {
+      VentasDashboard,
+    },
     data () {
       return {
         tabs: null,

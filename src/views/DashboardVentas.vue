@@ -1,4 +1,5 @@
 <template>
+  <div class ="ventas">
   <v-container
     id="dashboard-view-ventas"
     fluid
@@ -231,6 +232,8 @@
       </v-col>
     </v-row>
   </v-container>
+  <ventas-dashboard />
+  </div>
 </template>
 
 <script>
