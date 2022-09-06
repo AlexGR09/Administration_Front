@@ -20,16 +20,14 @@ const router = new Router({
   },
   routes: [
     layout('Default', [
-      route('Dashboard'),
+      route('Login'),
 
       // Pages
-      route('UserProfile', null, 'components/profile'),
-      route('CreateUser', null, 'components/newuser'),
+      route('DashboardVentas', null, 'ventas/dashboard'),
+      route('UserProfile', null, 'ventas/profile'),
+      route('CreateUser', null, 'ventas/newuser'),
       // Components
-      route('Notifications', null, 'components/notifications'),
-      route('Icons', null, 'components/icons'),
-      // Tables
-      route('Regular Tables', null, 'tables/regular'),
+      route('Notifications', null, 'ventas/notifications'),
     ]),
   ],
 })

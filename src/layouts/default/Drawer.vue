@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-navigation-drawer
     id="default-drawer"
     v-model="drawer"
@@ -12,22 +12,12 @@
       <default-drawer-header />
 
       <v-divider class="mx-3 mb-2" />
-      <v-subheader>VENTAS</v-subheader>
+      <v-subheader> </v-subheader>
       <default-list :items="items" />
     </div>
 
     <template #append>
       <div class="pa-4 text-center">
-        <app-btn
-          class="text-none mb-4"
-          color="black"
-          href="https://vuetifyjs.com"
-          small
-          text
-        >
-          Documentation
-        </app-btn>
-
         <app-btn
           block
           class="text-none"
@@ -35,10 +25,10 @@
           href="https://store.vuetifyjs.com/products/vuetify-material-dashboard-pro"
         >
           <v-icon left>
-            mdi-package-up
+            mdi-logout-variant
           </v-icon>
 
-          Upgrade to Pro
+          Cerrar sesión
         </app-btn>
       </div>
     </template>
@@ -103,3 +93,4 @@
     .v-list-item
       justify-content: flex-start !important
 </style>
+ -->

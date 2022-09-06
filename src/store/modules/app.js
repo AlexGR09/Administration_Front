@@ -10,22 +10,22 @@ const state = {
     {
       title: 'Inicio',
       icon: 'mdi-view-dashboard',
-      to: '/',
+      to: '/ventas/dashboard',
     },
     {
       title: 'Cuestionario',
       icon: 'mdi-file-document',
-      to: '/components/profile/',
+      to: '/ventas/profile/',
     },
     {
       title: 'Crear cliente',
       icon: 'mdi-account',
-      to: '/components/newuser/',
+      to: '/ventas/newuser/',
     },
     {
       title: 'Notificaciones',
       icon: 'mdi-bell',
-      to: '/components/notifications/',
+      to: '/ventas/notifications/',
     },
   ],
 }
