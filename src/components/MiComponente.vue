@@ -33,12 +33,46 @@
         >
           <v-list-item
             link
+            href="ventas/dashboard"
           >
             <v-list-item-icon>
-              <v-icon>mdi-account-plus</v-icon>
+              <v-icon>mdi-view-dashboard</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Inicio</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            link
+            href="ventas/profile"
+          >
+            <v-list-item-icon>
+              <v-icon>mdi-file-document</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Cuestionarios</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            link
+            href="ventas/newuser"
+          >
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>Crear cliente</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            link
+            href="ventas/notifications"
+          >
+            <v-list-item-icon>
+              <v-icon>mdi-bell</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <v-list-item-title>Notificaciones</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -85,7 +119,7 @@
             to: '/ventas/profile/',
           },
           {
-            title: 'Crear cliente',
+            title: 'Crear cliasente',
             icon: 'mdi-account',
             to: '/ventas/newuser/',
           },
