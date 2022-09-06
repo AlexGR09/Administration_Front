@@ -23,11 +23,12 @@ const router = new Router({
       route('Login'),
 
       // Pages
-      route('DashboardVentas', null, 'ventas/dashboard'),
-      route('UserProfile', null, 'ventas/profile'),
-      route('CreateUser', null, 'ventas/newuser'),
+      route('Register', null, '/registro'),
+      route('DashboardVentas', null, '/ventas/dashboard'),
+      route('UserProfile', null, '/ventas/profile'),
+      route('CreateUser', null, '/ventas/newuser'),
       // Components
-      route('Notifications', null, 'ventas/notifications'),
+      route('Notifications', null, '/ventas/notifications'),
     ]),
   ],
 })

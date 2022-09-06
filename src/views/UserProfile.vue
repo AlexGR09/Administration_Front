@@ -970,6 +970,13 @@
 <script>
   import VentasDashboard from '@/components/VentasDashboard.vue'
   export default {
+    watch: {
+      'route': function (to, from) {
+      if (to.path !== from.path) {
+
+      }
+    },
+  },
     components: {
       VentasDashboard,
     },
