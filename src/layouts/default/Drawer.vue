@@ -15,7 +15,6 @@
       <v-subheader> </v-subheader>
       <default-list :items="items" />
     </div>
-
     <template #append>
       <div class="pa-4 text-center">
         <app-btn
