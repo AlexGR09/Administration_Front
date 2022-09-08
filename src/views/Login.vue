@@ -211,6 +211,7 @@
   .fondito{
     background: #1dbec7;
   }
+  
 .v-application .rounded-bl-xl {
     border-bottom-left-radius: 300px !important;
 }
