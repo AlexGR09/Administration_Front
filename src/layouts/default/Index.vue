@@ -25,10 +25,6 @@
         /* webpackChunkName: "default-drawer" */
         './Drawer'
       ),
-      DefaultFooter: () => import(
-        /* webpackChunkName: "default-footer" */
-        './Footer'
-      ),
       DefaultSettings: () => import(
         /* webpackChunkName: "default-settings" */
         './Settings'

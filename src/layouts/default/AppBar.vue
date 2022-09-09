@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-app-bar
     id="default-app-bar"
     app
@@ -73,3 +73,4 @@
     },
   }
 </script>
+ -->
