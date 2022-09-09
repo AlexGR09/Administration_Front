@@ -165,51 +165,71 @@
                            </v-col>
                            <v-col
                             cols="12"
-                            sm="6"
+                            sm="8"
                            >
                            <v-menu
                               ref="menu"
                               v-model="menu"
                               :close-on-content-click="false"
+                              :return-value.sync="date"
                               transition="scale-transition"
                               offset-y
-                              dense
-                              outlined
                               min-width="auto"
                             >
                               <template v-slot:activator="{ on, attrs }">
                                 <v-text-field
                                   v-model="date"
                                   dense
-                              outlined
-                                  label="Birthday date"
+                                  outlined
+                                  label="Fecha de nacimiento"
                                   prepend-icon="mdi-calendar"
                                   readonly
+                                  id="fechaNacimiento"
                                   v-bind="attrs"
                                   v-on="on"
                                 ></v-text-field>
                               </template>
                               <v-date-picker
                                 v-model="date"
-                                :active-picker.sync="activePicker"
-                                :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
-                                min="1950-01-01"
-                                @change="save"
-                              ></v-date-picker>
+                                no-title
+                                id="fechaNacimiento"
+                                scrollable
+                              >
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                  text
+                                  color="primary"
+                                  @click="menu = false"
+                                >
+                                  Cancel
+                                </v-btn>
+                                <v-btn
+                                  text
+                                  color="primary"
+                                  @click="$refs.menu.save(date)"
+                                >
+                                  OK
+                                </v-btn>
+                              </v-date-picker>
                             </v-menu>
                            </v-col>
                            <v-col
                             cols="12"
-                            sm="6"
+                            sm="4"
                            >
                           <v-text-field
-                            label="Apellido materno"
+                            label="Edad"
                             outlined
                             dense
                             hide-details
                             color="#ef8f71"
                             autocomplete="false"
                           />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
                            </v-col>
                            </v-row>
                             <v-row>
@@ -248,21 +268,21 @@
                           outlined
                           color="grey"
                         >
-                          <v-icon color="red">fab fa-google</v-icon>
+                          <v-icon color="red">mdi-google</v-icon>
                         </v-btn>
                         <v-btn
                           depressed
                           outlined
                           color="grey"
                         >
-                          <v-icon color="blue">fab fa-facebook-f</v-icon>
+                          <v-icon color="blue">mdi-facebook</v-icon>
                         </v-btn>
                         <v-btn
                           depressed
                           outlined
                           color="grey"
                         >
-                          <v-icon color="light-blue lighten-3">fab fa-twitter</v-icon>
+                          <v-icon color="light-blue lighten-3">mdi-twitter</v-icon>
                         </v-btn>
                          </div>
                           </v-col>
@@ -289,7 +309,7 @@
   }),
   watch: {
     menu (val) {
-      val && setTimeout(() => (this.activePicker = 'MONTH'))
+      val && setTimeout(() => (this.activePicker = 'YEAR'))
     },
   },
   methods: {
