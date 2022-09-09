@@ -1,5 +1,7 @@
 <template>
-    <div class="center examplex">
+    <div
+    class="center examplex"
+    >
       <vs-navbar
         center-collapsed
         v-model="active"
@@ -14,11 +16,12 @@
         </template>
         <template #right>
           <vs-button
-          flat
+          color="#F0B4A0"
           href="/"
           >Iniciar sesión</vs-button>
           <vs-button
           href="/registro"
+          color="#ee8a6a"
           >Registrarse</vs-button>
         </template>
       </vs-navbar>

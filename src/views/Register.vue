@@ -20,18 +20,19 @@
                     >
                      <div style="  text-align: center; padding: 180px 0;">
                       <v-card-text class="white--text">
-                        <h3 class="text-center ">Alredy Signed up?</h3>
-                        <h6
+                        <h1 class="text-center ">¿Ya tienes una cuenta?</h1>
+                        <h3
                           class="text-center"
-                        >Log in to your account so you can continue building and<br>  editing your onboarding flows</h6>
+                        ><br>Let's get you all set up so you can start creating your your first onboarding experience</h3>
                       </v-card-text>
                       <div class="text-center">
                         <v-btn
                         tile
                         outlined
                         dark
+                        href="/"
                         >
-                        Log in</v-btn>
+                        Iniciar sesión</v-btn>
                       </div>
                       </div>
                     </v-col>
@@ -306,17 +307,17 @@
       menu: false,
       items: ['Femenino', 'Masculino', 'Otros'],
       value: null,
-  }),
-  watch: {
-    menu (val) {
-      val && setTimeout(() => (this.activePicker = 'YEAR'))
+    }),
+    watch: {
+      menu (val) {
+        val && setTimeout(() => (this.activePicker = 'YEAR'))
+      },
     },
-  },
-  methods: {
-    save (date) {
-      this.$refs.menu.save(date)
+    methods: {
+      save (date) {
+        this.$refs.menu.save(date)
+      },
     },
-  },
     components: {
       logbar,
     },
