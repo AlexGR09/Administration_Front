@@ -63,6 +63,7 @@
                             <v-text-field
                               label="Nombre de usuario"
                               outlined
+                              hide-details
                               dense
                               color="#ef8f71"
                               autocomplete="false"
@@ -74,30 +75,143 @@
                             sm="6"
                            >
                             <v-text-field
-                            label="Correo electrónico"
+                            label="Contraseña"
                             outlined
                             dense
+                            hide-details
                             color="#ef8f71"
                             autocomplete="false"
                            class="mt-4"
                           />
                            </v-col>
-                           </v-row>
+                           <v-col
+                            cols="12"
+                            sm="12"
+                           >
                           <v-text-field
-                            label="Contraseña"
+                            label="Correo electrónico"
                             outlined
                             dense
+                            hide-details
                             color="#ef8f71"
                             autocomplete="false"
                           />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="12"
+                           >
                           <v-text-field
                             label="Nombre(es)"
                             outlined
+                            hide-details
                             dense
                             color="#ef8f71"
                             autocomplete="false"
-                           type="password"
                           />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
+                          <v-text-field
+                            label="Apellido paterno"
+                            outlined
+                            hide-details
+                            dense
+                            color="#ef8f71"
+                            autocomplete="false"
+                          />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
+                          <v-text-field
+                            label="Apellido materno"
+                            outlined
+                            dense
+                            hide-details
+                            color="#ef8f71"
+                            autocomplete="false"
+                          />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
+                          <v-text-field
+                            label="Teléfono personal"
+                            outlined
+                            dense
+                            hide-details
+                            color="#ef8f71"
+                            autocomplete="false"
+                          />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
+                          <v-autocomplete
+                            label="Género"
+                            outlined
+                            v-model="value"
+                            :items="items"
+                            dense
+                            hide-details
+                            color="#ef8f71"
+                          />
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
+                           <v-menu
+                              ref="menu"
+                              v-model="menu"
+                              :close-on-content-click="false"
+                              transition="scale-transition"
+                              offset-y
+                              dense
+                              outlined
+                              min-width="auto"
+                            >
+                              <template v-slot:activator="{ on, attrs }">
+                                <v-text-field
+                                  v-model="date"
+                                  dense
+                              outlined
+                                  label="Birthday date"
+                                  prepend-icon="mdi-calendar"
+                                  readonly
+                                  v-bind="attrs"
+                                  v-on="on"
+                                ></v-text-field>
+                              </template>
+                              <v-date-picker
+                                v-model="date"
+                                :active-picker.sync="activePicker"
+                                :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
+                                min="1950-01-01"
+                                @change="save"
+                              ></v-date-picker>
+                            </v-menu>
+                           </v-col>
+                           <v-col
+                            cols="12"
+                            sm="6"
+                           >
+                          <v-text-field
+                            label="Apellido materno"
+                            outlined
+                            dense
+                            hide-details
+                            color="#ef8f71"
+                            autocomplete="false"
+                          />
+                           </v-col>
+                           </v-row>
                             <v-row>
                               <v-col
                                 cols="12"
@@ -166,6 +280,23 @@
 <script>
   import logbar from '@/components/logbar.vue'
   export default {
+    data: () => ({
+      activePicker: null,
+      date: null,
+      menu: false,
+      items: ['Femenino', 'Masculino', 'Otros'],
+      value: null,
+  }),
+  watch: {
+    menu (val) {
+      val && setTimeout(() => (this.activePicker = 'MONTH'))
+    },
+  },
+  methods: {
+    save (date) {
+      this.$refs.menu.save(date)
+    },
+  },
     components: {
       logbar,
     },
