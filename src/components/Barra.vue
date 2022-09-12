@@ -58,35 +58,24 @@
         v-model="active"
         :open.sync="activeSidebar"
       >
-        <template #logo>
-          <v-list-item-avatar>
-            <v-img
-              :src="
-              require('@/assets/MARKy.png')"
-            />
-          </v-list-item-avatar>
-        </template>
-        <div
-          class="header-sidebar"
-          slot="header"
-        >
-          <vs-avatar
-            size="70"
-            badge
-            badge-color="success"
-          >
-          <v-img
-            :src="
-            require('@/assets/mujer.jpg')"
-          />
-          </vs-avatar>
-          <h4
-            align-items
-            center
-          >
-          Perfil de ventas
-          </h4>
-        </div>
+      <template #logo>
+        <v-list-item>
+      <v-list-item-avatar>
+        <v-img
+          :src="
+            require('@/assets/MARKy.png')"
+        />
+      </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title class="text-h3">
+                MARKY APP
+              </v-list-item-title>
+              <v-list-item-subtitle class="text-h6">
+                Ventas
+              </v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+      </template>
         <v-divider></v-divider>
         <vs-sidebar-item
           id="donate"
