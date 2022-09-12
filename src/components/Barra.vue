@@ -1,10 +1,11 @@
 <template>
     <div class="hidden">
       <vs-navbar
-        shadow
-        square
-        center-collapsed
+        absolute
+        hover-expand
+        reduce
         v-model="active"
+        open
       >
         <template #left>
           <vs-button
@@ -42,8 +43,11 @@
           license
         </vs-navbar-item>
         <template #right>
-          <vs-button flat>Login</vs-button>
-          <vs-button>Get Started</vs-button>
+          <vs-button
+            href = "/"
+            flat
+            >
+            Cerrar sesión</vs-button>
         </template>
       </vs-navbar>
       <div class="hidden">
@@ -62,46 +66,63 @@
             />
             </v-list-item-avatar>
         </template>
-      <v-divider class="mx-3 mb-2" />
-        <vs-sidebar-item id="home">
+      <div
+        class="header-sidebar"
+        slot="header"
+      >
+        <vs-avatar
+        size="70px"
+        src="https://randomuser.me/api/portraits/men/85.jpg"
+        />
+
+        <h4>
+          My Name
+        </h4>
+
+      </div>
+      <vs-sidebar-item
+        id="donate"
+      >
           <template #icon>
             <v-icon>mdi-home</v-icon>
           </template>
-          Inicio
+          <router-link to="/ventas/dashboard">Inicio</router-link>
         </vs-sidebar-item>
-        <vs-sidebar-item id="home">
+        <vs-sidebar-item
+        id="drink"
+        >
           <template #icon>
             <v-icon>mdi-file-document</v-icon>
           </template>
-          Cuestionarios
+          <router-link to="/ventas/cuestionario">Cuestionarios</router-link>
         </vs-sidebar-item>
-        <vs-sidebar-item id="home">
+        <vs-sidebar-item id="shopping">
           <template #icon>
             <v-icon>mdi-account-plus</v-icon>
           </template>
-          Crear cliente
+          <router-link to="/ventas/newuser">Crear cliente</router-link>
         </vs-sidebar-item>
-        <vs-sidebar-item id="home">
+        <vs-sidebar-item id="chat">
           <template #icon>
             <v-icon>mdi-bell</v-icon>
           </template>
-          Notificaciones
+          <router-link to="/ventas/notifications">Notificaciones</router-link>
         </vs-sidebar-item>
         <template #footer>
-            <div class="pa-4 text-center">
-        <app-btn
-          block
-          class="text-none"
-          color="secondary"
-          href="/ventas/profile"
-        >
-          <v-icon left>
+          <vs-button
+          danger
+          animation-type="scale"
+      >
+      <v-icon
+        left
+        color="white"
+      >
             mdi-logout-variant
           </v-icon>
-
-          Cerrar sesión
-        </app-btn>
-      </div>
+        <template #animate>
+          Salir
+        </template>
+      </vs-button>
         </template>
       </vs-sidebar>
     </div>
@@ -115,12 +136,19 @@
   Vue.use(Vuesax, {
   })
   export default {
+    computed: {
+      ...sync('app', [
+        'drawer',
+        'mini',
+      ]),
+      name: get('route/name'),
+    },
     data () {
       return {
         right: null,
         drawer: null,
         active: 'home',
-        activeSidebar: false,
+        activeSidebar: true,
       }
     },
     name: 'Barra',

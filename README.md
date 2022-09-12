@@ -160,7 +160,7 @@ vuetify-material-dashboard/
 ┃ ┃ ┣ Notifications.vue
 ┃ ┃ ┣ RegularTables.vue
 ┃ ┃ ┣ Typography.vue
-┃ ┃ ┗ UserProfile.vue
+┃ ┃ ┗ Cuestionario.vue
 ┃ ┣ App.vue
 ┃ ┗ main.js
 ┣ .browserslistrc
