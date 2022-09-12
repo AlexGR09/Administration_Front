@@ -635,11 +635,15 @@
             </v-col>
             </v-row>
     </v-container>
-  <ventas-dashboard />
+  <barra />
     </div>
 </template>
 <script>
+  import Barra from '@/components/Barra.vue'
   export default {
+    components: {
+      Barra,
+    },
     data: () => ({
       e13: 1,
       titulos: ['Dr.', 'Dra.', 'Lic.', 'QFB', 'Ing'],

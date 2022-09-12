@@ -281,16 +281,16 @@
       </v-card>
     </v-dialog>
   </v-container>
-  <ventas-dashboard />
+  <barra />
 </div>
 </template>
 
 <script>
-  import VentasDashboard from '@/components/VentasDashboard.vue'
+  import Barra from '@/components/Barra.vue'
   export default {
     name: 'NotificationsView',
     components: {
-      VentasDashboard,
+      Barra,
     },
     data: () => ({
       color: 'info',
