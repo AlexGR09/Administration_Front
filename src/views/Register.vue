@@ -41,13 +41,13 @@
                       md="6"
                     >
                       <v-card-text class="mt-12">
-                        <h4
+                        <h2
                           class="text-center"
-                        >Sign Up for an Account</h4>
-                        <h6
+                        >Registrate como cuenta nueva</h2>
+                        <h5
                           class="text-center  grey--text "
-                        >Let's get you all set up so you can start creatin your <br>
-                        first onboarding experiance</h6>
+                        >Empecemos registrando tus datos para que puedas <br>
+                        vivir la experiencia</h5>
                         <v-row
                           align="center"
                           justify="center"
@@ -239,7 +239,7 @@
                                 sm="7"
                                 >
                                 <v-checkbox
-                                  label="I Accept AAE"
+                                  label="Acepto los terminos y condiciones"
                                   class="mt-n1"
                                   color="#ef8f71"
                                 ></v-checkbox>
@@ -259,10 +259,10 @@
                             dark
                             block
                             tile
-                          >Sign up</v-btn>
+                          >Registrarse</v-btn>
                          <h5
                           class="text-center  grey--text mt-4 mb-3"
-                        >Or Sign up using</h5>
+                        >O ingresa usando</h5>
                          <div class="d-flex  justify-space-between align-center mx-10 mb-11">
                         <v-btn
                           depressed
