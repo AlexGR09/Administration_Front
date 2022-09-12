@@ -27,6 +27,7 @@ const router = new Router({
       route('DashboardVentas', null, '/ventas/dashboard'),
       route('Cuestionario', null, '/ventas/cuestionario'),
       route('CreateUser', null, '/ventas/newuser'),
+      route('ventas', null, '/ventas'),
       // Components
       route('Notifications', null, '/ventas/notifications'),
     ]),
