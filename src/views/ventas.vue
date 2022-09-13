@@ -1,5 +1,7 @@
 <template>
+  <div>
     <barra />
+  </div>
 </template>
 <script>
   import Barra from '@/components/Barra.vue'

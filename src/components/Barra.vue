@@ -1,161 +1,169 @@
 <template>
-  <div class="hidden">
-    <vs-navbar
-      absolute
-      hover-expand
-      reduce
-      v-model="active"
-      open
-      >
-      <template #left>
-        <vs-button
-          @click="activeSidebar = !activeSidebar"
-          flat
-          :mini-variant.sync="mini"
-          mini-variant-width="80"
-          icon
-          >
-          <i class='bx bx-menu'></i>
-        </vs-button>
-      </template>
-      <vs-navbar-item
-      :active="active == 'guide'"
-      id="guide"
-      >
-      Inicio
-      </vs-navbar-item>
-      <vs-navbar-item
-      :active="active == 'docs'"
-      id="docs"
-      >
-      Cuestionarios
-      </vs-navbar-item>
-      <vs-navbar-item
-      :active="active == 'components'"
-      id="components"
-      >
-      Clientes
-      </vs-navbar-item>
-      <vs-navbar-item
-      :active="active == 'license'"
-      id="license"
-      >
-      Notificaciones
-      </vs-navbar-item>
-      <template #right>
-        <vs-button
-        href = "/"
-        flat
+  <v-navigation-drawer
+    id="default-drawer"
+    v-model="drawer"
+    :right="$vuetify.rtl"
+    :mini-variant.sync="mini"
+    mini-variant-width="80"
+    app
+    width="260"
+  >
+  <v-list-item>
+    <v-list-item-avatar>
+      <v-img
+        :src="
+          require('@/assets/MARKy.png')"
+      />
+    </v-list-item-avatar>
+          <v-list-item-content>
+            <v-list-item-title class="text-h3">
+              MARKY APP
+            </v-list-item-title>
+            <v-list-item-subtitle class="text-h6">
+              Ventas
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+    <div class="px-2">
+      <default-drawer-header />
+      <v-divider class="mx-3 mb-2" />
+      <v-list
+          dense
+          nav
         >
-        Cerrar sesión</vs-button>
-      </template>
-    </vs-navbar>
-    <div class="hidden">
-      <vs-sidebar
-        absolute
-        hover-expand
-        reduce
-        v-model="active"
-        :open.sync="activeSidebar"
-      >
-      <template #logo>
-        <v-list-item>
-      <v-list-item-avatar>
-        <v-img
-          :src="
-            require('@/assets/MARKy.png')"
-        />
-      </v-list-item-avatar>
+          <v-list-item
+            link
+          >
+            <v-list-item-icon>
+              <v-icon>mdi-view-dashboard</v-icon>
+            </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title class="text-h3">
-                MARKY APP
-              </v-list-item-title>
-              <v-list-item-subtitle class="text-h6">
-                Ventas
-              </v-list-item-subtitle>
+              <router-link to="/ventas/dashboard"><v-list-item-title>Inicio</v-list-item-title> </router-link>
             </v-list-item-content>
           </v-list-item>
-      </template>
-        <v-divider></v-divider>
-        <vs-sidebar-item
-          id="donate"
+          <v-list-item
+            link
           >
-          <template #icon>
-            <v-icon>mdi-home</v-icon>
-          </template>
-          <router-link to="/ventas/dashboard">Inicio</router-link>
-        </vs-sidebar-item>
-        <vs-sidebar-item
-          id="drink"
+            <v-list-item-icon>
+              <v-icon>mdi-file-document</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <router-link to="/ventas/cuestionario"><v-list-item-title>Cuestionarios</v-list-item-title> </router-link>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            link
           >
-          <template #icon>
-            <v-icon>mdi-file-document</v-icon>
-          </template>
-          <router-link to="/ventas/cuestionario">Cuestionarios</router-link>
-        </vs-sidebar-item>
-        <vs-sidebar-item id="shopping">
-          <template #icon>
-            <v-icon>mdi-account-plus</v-icon>
-          </template>
-          <router-link to="/ventas/newuser">Crear cliente</router-link>
-        </vs-sidebar-item>
-        <vs-sidebar-item id="chat">
-          <template #icon>
-            <v-icon>mdi-bell</v-icon>
-          </template>
-          <router-link to="/ventas/notifications">Notificaciones</router-link>
-        </vs-sidebar-item>
-        <template #footer>
-          <vs-button
-            danger
-            animation-type="scale"
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <router-link to="/ventas/newuser"><v-list-item-title>Crear cliente</v-list-item-title> </router-link>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            link
           >
-            <v-icon
-              left
-              color="white"
-            >
-            mdi-logout-variant
-            </v-icon>
-            <template #animate>
-              Salir
-            </template>
-          </vs-button>
-        </template>
-      </vs-sidebar>
+            <v-list-item-icon>
+              <v-icon>mdi-bell</v-icon>
+            </v-list-item-icon>
+            <v-list-item-content>
+              <router-link to="/ventas/notifications"><v-list-item-title>Notificaciones</v-list-item-title> </router-link>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
     </div>
-  </div>
-  </template>
-  <script>
-  import Vue from 'vue'
+
+    <template #append>
+      <div class="pa-4 text-center">
+        <app-btn
+          block
+          class="text-none"
+          color="secondary"
+          href="/ventas/profile"
+        >
+          <v-icon left>
+            mdi-logout-variant
+          </v-icon>
+
+          Cerrar sesión
+        </app-btn>
+      </div>
+    </template>
+
+    <div class="pt-12" />
+  </v-navigation-drawer>
+</template>
+
+<script>
+  // Utilities
   import { get, sync } from 'vuex-pathify'
-  import Vuesax from 'vuesax'
-  import 'vuesax/dist/vuesax.css'
-  Vue.use(Vuesax, {
-  })
   export default {
-    computed: {
-      ...sync('app', [
-        'drawer',
-        'mini',
-      ]),
-      name: get('route/name'),
-    },
     data () {
       return {
-        right: null,
         drawer: null,
-        active: 'home',
-        activeSidebar: true,
+        items: [
+          {
+            title: 'Inicio',
+            icon: 'mdi-view-dashboard',
+            href: 'ventas/profile',
+          },
+          {
+            title: 'Cuestionario',
+            icon: 'mdi-file-document',
+            to: '/ventas/profile/',
+          },
+          {
+            title: 'Crear cliasente',
+            icon: 'mdi-account',
+            to: '/ventas/newuser/',
+          },
+          {
+            title: 'Notificacionses',
+            icon: 'mdi-bell',
+            to: '/ventas/notifications/',
+          },
+        ],
+        right: null,
       }
     },
-    name: 'Barra',
+    name: 'VentasDashboard',
+    computed: {
+      ...get('user', [
+        'dark',
+        'gradient',
+        'image',
+      ]),
+      ...get('app', [
+        'items',
+        'version',
+      ]),
+      ...sync('app', [
+        'drawer',
+        'drawerImage',
+        'mini',
+      ]),
+    },
   }
 </script>
-<style scoped>
-  .h4{
-    display: flex
-    align-items center
-    justify-content center
-    width 100%
+
+<style>
+#default-drawer
+  .v-list-item{
+    margin-bottom: 8px
   }
+  .v-list-item::before,
+  .v-list-item::after{
+    display: none
+  }
+  .v-list-group__header__prepend-icon,
+  .v-list-item__icon{
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 4px;
+  }
+  .v-navigation-drawer--mini-variant
+    .v-list-item{
+      justify-content: flex-start !important
+    }
 </style>
