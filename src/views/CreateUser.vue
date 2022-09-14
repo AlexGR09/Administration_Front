@@ -5,6 +5,8 @@
         fluid
         tag="section"
         >
+        <v-row>
+            <v-col cols="12">
             <v-row justify="center">
                 <v-col
                     cols="12"
@@ -633,6 +635,8 @@
                     </material-card>
                 </v-col>
             </v-col>
+            </v-row>
+        </v-col>
             </v-row>
     </v-container>
   <barra />

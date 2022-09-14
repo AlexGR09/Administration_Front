@@ -5,11 +5,14 @@
     fluid
     tag="section"
   >
+  <v-row>
+    <v-col>
+      <v-col>
     <view-intro
       heading="Notifications"
       link="components/alerts"
     />
-
+</v-col>
     <v-row>
       <v-col
         cols="12"
@@ -280,6 +283,8 @@
         </v-card-text>
       </v-card>
     </v-dialog>
+    </v-col>
+    </v-row>
   </v-container>
   <barra />
 </div>
