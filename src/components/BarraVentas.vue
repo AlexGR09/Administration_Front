@@ -16,8 +16,8 @@
           </vs-button>
         </template>
         <vs-navbar-item
-        :active="active == 'guide'"
-        id="guide"
+        :active="active == 'License'"
+        id="License"
         >
           Inicio
         </vs-navbar-item>
@@ -50,12 +50,47 @@
             </vs-navbar-item>
           </template>
         </vs-navbar-group>
-        <vs-navbar-item
-          :active="active == 'components'"
-          id="components"
-        >
+        <vs-navbar-group>
           Admin
-        </vs-navbar-item>
+          <template #items>
+            <vs-navbar-item
+            :active="active == 'Github'"
+            id="Github"
+            >
+              Usuarios
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Discord'"
+            id="Discord"
+            >
+              Usuarios/Tipo de usuario
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Twitter'"
+            id="Twitter"
+            >
+              Establecimientos
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Medium'"
+            id="Medium"
+            >
+              Equipos
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Medium'"
+            id="Medium"
+            >
+              Edición de tablas adicionales
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Medium'"
+            id="Medium"
+            >
+              Diagnóstico
+            </vs-navbar-item>
+          </template>
+        </vs-navbar-group>
         <template #right>
           <vs-button
           flat
