@@ -1,106 +1,158 @@
 <template>
-  <v-navigation-drawer
-    id="default-drawer"
-    v-model="drawer"
-    :right="$vuetify.rtl"
-    :mini-variant.sync="mini"
-    mini-variant-width="80"
-    app
-    width="260"
+  <vs-navbar
+    shadow
+    square
+    center-collapsed
+    v-model="active"
   >
-  <v-list-item>
-    <v-list-item-avatar>
-      <v-img
-        :src="
-          require('@/assets/MARKy.png')"
-      />
-    </v-list-item-avatar>
-          <v-list-item-content>
-            <v-list-item-title class="text-h3">
-              MARKY APP
-            </v-list-item-title>
-            <v-list-item-subtitle class="text-h6">
-              Ventas
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-    <div class="px-2">
-      <default-drawer-header />
-      <v-divider class="mx-3 mb-2" />
-      <v-list
-          dense
-          nav
+        <template #left>
+          <vs-button
+            @click="active = !active"
+            flat
+            icon
+            color="white"
+          >
+            <v-icon>mdi-menu</v-icon>
+          </vs-button>
+        </template>
+        <vs-navbar-item
+        :active="active == 'guide'"
+        id="guide"
         >
-          <v-list-item
-            link
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-view-dashboard</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <router-link to="/ventas/dashboard"><v-list-item-title>Inicio</v-list-item-title> </router-link>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item
-            link
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-file-document</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <router-link to="/ventas/cuestionario"><v-list-item-title>Cuestionarios</v-list-item-title> </router-link>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item
-            link
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <router-link to="/ventas/newuser"><v-list-item-title>Crear cliente</v-list-item-title> </router-link>
-            </v-list-item-content>
-          </v-list-item>
-          <v-list-item
-            link
-          >
-            <v-list-item-icon>
-              <v-icon>mdi-bell</v-icon>
-            </v-list-item-icon>
-            <v-list-item-content>
-              <router-link to="/ventas/notifications"><v-list-item-title>Notificaciones</v-list-item-title> </router-link>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-    </div>
-
-    <template #append>
-      <div class="pa-4 text-center">
-        <app-btn
-          block
-          class="text-none"
-          color="secondary"
-          href="/ventas/profile"
+          Guide
+        </vs-navbar-item>
+        <vs-navbar-item
+        :active="active == 'docs'"
+        id="docs"
         >
-          <v-icon left>
-            mdi-logout-variant
-          </v-icon>
+          Documentss
+        </vs-navbar-item>
+        <vs-navbar-item
+          :active="active == 'components'"
+          id="components"
+        >
+          Components
+        </vs-navbar-item>
+        <vs-navbar-item
+          :active="active == 'license'"
+          id="license"
+        >
+          license
+        </vs-navbar-item>
+        <template #right>
+          <vs-button flat>Login</vs-button>
+          <vs-button>Get Started</vs-button>
+        </template>
+        <v-navigation-drawer
+          id="default-drawer"
+          hoverExpand
+          v-model="active"
+          :right="$vuetify.rtl"
+          :mini-variant.sync="mini"
+          mini-variant-width="80"
+          app
+          width="260"
+        >
+            <v-list-item>
+              <v-list-item-avatar>
+                <v-img
+                  :src="
+                    require('@/assets/MARKy.png')"
+                />
+              </v-list-item-avatar>
+                    <v-list-item-content>
+                      <v-list-item-title class="text-h3">
+                        MARKY APP
+                      </v-list-item-title>
+                      <v-list-item-subtitle class="text-h6">
+                        Ventas
+                      </v-list-item-subtitle>
+                    </v-list-item-content>
+                  </v-list-item>
+              <div class="px-2">
+                <default-drawer-header />
+                <v-divider class="mx-3 mb-2" />
+                <v-list
+                    dense
+                    nav
+                  >
+                    <v-list-item
+                      link
+                    >
+                      <v-list-item-icon>
+                        <v-icon>mdi-view-dashboard</v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-content>
+                        <router-link to="/ventas/dashboard"><v-list-item-title>Inicio</v-list-item-title> </router-link>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item
+                      link
+                    >
+                      <v-list-item-icon>
+                        <v-icon>mdi-file-document</v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-content>
+                        <router-link to="/ventas/cuestionario"><v-list-item-title>Cuestionarios</v-list-item-title> </router-link>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item
+                      link
+                    >
+                      <v-list-item-icon>
+                        <v-icon>mdi-account</v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-content>
+                        <router-link to="/ventas/newuser"><v-list-item-title>Crear cliente</v-list-item-title> </router-link>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item
+                      link
+                    >
+                      <v-list-item-icon>
+                        <v-icon>mdi-bell</v-icon>
+                      </v-list-item-icon>
+                      <v-list-item-content>
+                        <router-link to="/ventas/notifications"><v-list-item-title>Notificaciones</v-list-item-title> </router-link>
+                      </v-list-item-content>
+                    </v-list-item>
+                  </v-list>
+              </div>
+              <template #append>
+                <div class="pa-4 text-center">
+                  <app-btn
+                    block
+                    class="text-none"
+                    color="secondary"
+                    href="/ventas/profile"
+                  >
+                    <v-icon left>
+                      mdi-logout-variant
+                    </v-icon>
 
-          Cerrar sesión
-        </app-btn>
-      </div>
-    </template>
+                    Cerrar sesión
+                  </app-btn>
+                </div>
+              </template>
 
-    <div class="pt-12" />
+              <div class="pt-12" />
   </v-navigation-drawer>
+      </vs-navbar>
 </template>
 
 <script>
   // Utilities
   import { get, sync } from 'vuex-pathify'
+  import Vue from 'vue'
+  import Vuesax from 'vuesax'
+  import 'vuesax/dist/vuesax.css'
+  Vue.use(Vuesax, {
+    // options here
+  })
   export default {
     data () {
       return {
+        active: true,
         drawer: null,
         items: [
           {

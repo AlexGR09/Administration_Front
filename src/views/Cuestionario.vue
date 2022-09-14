@@ -5,11 +5,13 @@
     fluid
     tag="section"
   >
-    <v-row justify="center">
-      <v-col
-        cols="12"
-        md="10"
-      >
+  <v-row>
+    <v-col cols="12">
+      <v-row justify="center">
+        <v-col
+          cols="12"
+          md="10"
+        >
         <material-card
           color="primary"
           icon="mdi-file-document"
@@ -962,6 +964,8 @@
           </v-card-text>
         </app-card>
       </v-col>
+    </v-row>
+    </v-col>
     </v-row>
   </v-container>
   <barra />
