@@ -19,29 +19,26 @@
         :active="active == 'guide'"
         id="guide"
         >
-          Guide
+          Inicio
         </vs-navbar-item>
         <vs-navbar-item
         :active="active == 'docs'"
         id="docs"
         >
-          Documentss
+          Plataforma
         </vs-navbar-item>
         <vs-navbar-item
           :active="active == 'components'"
           id="components"
         >
-          Components
-        </vs-navbar-item>
-        <vs-navbar-item
-          :active="active == 'license'"
-          id="license"
-        >
-          license
+          Admin
         </vs-navbar-item>
         <template #right>
-          <vs-button flat>Login</vs-button>
-          <vs-button>Get Started</vs-button>
+          <vs-button
+          flat
+          href="/"
+          color="#DA4311"
+          >Cerrar sesión</vs-button>
         </template>
         <v-navigation-drawer
           id="default-drawer"
@@ -124,7 +121,7 @@
                     block
                     class="text-none"
                     color="secondary"
-                    href="/ventas/profile"
+                    href="/"
                   >
                     <v-icon left>
                       mdi-logout-variant

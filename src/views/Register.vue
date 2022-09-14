@@ -258,6 +258,7 @@
                             color="#1dbec7"
                             dark
                             block
+                            href="/panel"
                             tile
                           >Registrarse</v-btn>
                          <h5

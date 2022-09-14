@@ -72,6 +72,7 @@
                           dark
                           block
                           tile
+                          href="/panel"
                           >ACCEDER</v-btn>
                          <h5
                          class="text-center grey--text mt-4 mb-3"
