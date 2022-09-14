@@ -8,7 +8,6 @@
   <v-row>
     <v-col cols="12">
       <v-row justify="center">
-        <v-col>
         <v-col
           cols="12"
           md="10"
@@ -929,7 +928,6 @@
           </v-form>
         </material-card>
       </v-col>
-
       <v-col
         cols="12"
         md="2"
@@ -964,7 +962,6 @@
             </v-btn>
           </v-card-text>
         </app-card>
-      </v-col>
       </v-col>
     </v-row>
     </v-col>
