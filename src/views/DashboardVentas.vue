@@ -226,20 +226,20 @@
         </v-col>
       </v-row>
     </v-container>
-    <barra />
+    <barra-ventas />
     </div>
   </template>
   <script>
     // Utilities
   import { get } from 'vuex-pathify'
-  import Barra from '@/components/Barra.vue'
+  import BarraVentas from '@/components/BarraVentas.vue'
   import Vue from 'vue'
   const lineSmooth = Vue.chartist.Interpolation.cardinal({
     tension: 0,
   })
   export default {
     components: {
-      Barra,
+      BarraVentas,
     },
     name: 'DashboardView',
     data: () => ({

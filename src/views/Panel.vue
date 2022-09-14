@@ -6,14 +6,14 @@
       <h1>Este es el panel de cliente</h1>
       </v-col>
     </v-row>
-      <barra />
+      <barra-cliente />
     </div>
 </template>
 <script>
-  import Barra from '@/components/Barra.vue'
+  import BarraCliente from '@/components/BarraCliente.vue'
   export default {
     components: {
-      Barra,
+      BarraCliente,
     },
   }
 </script>

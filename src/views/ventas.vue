@@ -1,13 +1,13 @@
 <template>
   <div>
-    <barra />
+    <barra-ventas />
   </div>
 </template>
 <script>
-  import Barra from '@/components/Barra.vue'
+  import BarraVentas from '@/components/BarraVentas.vue'
   export default {
     components: {
-      Barra,
+      BarraVentas,
     },
   }
 </script>

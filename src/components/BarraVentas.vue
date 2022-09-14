@@ -21,12 +21,35 @@
         >
           Inicio
         </vs-navbar-item>
-        <vs-navbar-item
-        :active="active == 'docs'"
-        id="docs"
-        >
+        <vs-navbar-group>
           Plataforma
-        </vs-navbar-item>
+          <template #items>
+            <vs-navbar-item
+            :active="active == 'Github'"
+            id="Github"
+            >
+              Titulos
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Discord'"
+            id="Discord"
+            >
+              Tabla de contenidos
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Twitter'"
+            id="Twitter"
+            >
+              Especialidades médicas
+            </vs-navbar-item>
+            <vs-navbar-item
+            :active="active == 'Medium'"
+            id="Medium"
+            >
+              Clientes
+            </vs-navbar-item>
+          </template>
+        </vs-navbar-group>
         <vs-navbar-item
           :active="active == 'components'"
           id="components"
@@ -147,6 +170,7 @@
     // options here
   })
   export default {
+    name: 'BarraVentas',
     data () {
       return {
         active: true,
@@ -176,7 +200,6 @@
         right: null,
       }
     },
-    name: 'VentasDashboard',
     computed: {
       ...get('user', [
         'dark',
