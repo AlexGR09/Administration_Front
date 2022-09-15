@@ -2,14 +2,18 @@
   <div>
     <v-row>
       <v-col>
-        <vs-card type="3">
+        <v-row>
+          <v-col>
+        <vs-card 
+        type="3">
           <template #title>
             <h3>Pot with a plant</h3>
           </template>
           <template #img>
             <v-img
+            width="350px"
               :src="
-                require('@/assets/pricing.jpg')"
+                require('@/assets/mujer.jpg')"
             />
           </template>
           <template #text>
@@ -20,6 +24,8 @@
           <template #interactions>
           </template>
         </vs-card>
+      </v-col>
+        </v-row>
       </v-col>
     </v-row>
     <barra-cliente />
