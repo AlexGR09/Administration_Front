@@ -6,11 +6,11 @@
     >
       <template #left>
         <v-img
-        width="45px"
+        width="50px"
               :src="
                 require('@/assets/MARKy.png')"
             />
-            <strong class="mr-1 font-weight-black">MARKY</strong>
+        <strong class="mr-1 font-weight-black">MARKY</strong>
         <span class="primary--text">APP</span>
       </template>
       <vs-navbar-item
