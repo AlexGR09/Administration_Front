@@ -11,7 +11,7 @@
                 require('@/assets/MARKy.png')"
             />
         <strong class="mr-1 font-weight-black">MARKY</strong>
-        <span class="primary--text">APP</span>
+        <a class="primary--text">APP</a>
       </template>
       <vs-navbar-item
         id="guide"
@@ -34,7 +34,7 @@
           mdi-account-circle
         </v-icon>
       </v-avatar>
-      <h5>Juan Pérez Rodriguez</h5>
+      <h5>Génesis Ordoñez Pérez</h5>
       <span></span>
         <vs-button
           flat

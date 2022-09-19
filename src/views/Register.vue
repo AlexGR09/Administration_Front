@@ -26,13 +26,17 @@
                         ><br>Let's get you all set up so you can start creating your your first onboarding experience</h3>
                       </v-card-text>
                       <div class="text-center">
-                        <v-btn
-                        tile
-                        outlined
-                        dark
-                        href="/"
-                        >
-                        Iniciar sesión</v-btn>
+                        <router-link
+                          style="text-decoration: none;
+                          color: inherit;"
+                          to="/"
+                          ><v-btn
+                            tile
+                            outlined
+                            dark
+                            >
+                          INICIAR SESIÓN</v-btn>
+                        </router-link>
                       </div>
                       </div>
                     </v-col>
@@ -254,13 +258,18 @@
                                 Terms &Conditions</span>
                               </v-col>
                             </v-row>
-                          <v-btn
-                            color="#1dbec7"
-                            dark
-                            block
-                            href="/panel"
-                            tile
-                          >Registrarse</v-btn>
+                            <router-link
+                              style="text-decoration: none;
+                              color: inherit;"
+                              to="/panel"
+                              >
+                              <v-btn
+                                color="#1dbec7"
+                                dark
+                                block
+                                tile
+                              >Registrarse</v-btn>
+                            </router-link>
                          <h5
                           class="text-center  grey--text mt-4 mb-3"
                         >O ingresa usando</h5>

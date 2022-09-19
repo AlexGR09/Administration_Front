@@ -67,6 +67,11 @@
                                 >¿Olvidaste tu contraseña?</span>
                               </v-col>
                             </v-row>
+                            <router-link
+                          style="text-decoration: none;
+                          color: inherit;"
+                          to="/registro"
+                          >
                           <v-btn
                           color="#1dbec7"
                           dark
@@ -74,6 +79,7 @@
                           tile
                           href="/panel"
                           >ACCEDER</v-btn>
+                        </router-link>
                          <h5
                          class="text-center grey--text mt-4 mb-3"
                         >O ingresa usando</h5>
@@ -117,18 +123,21 @@
                         ><br>Let's get you all set up so you can start creating your your first onboarding experience</h3>
                       </v-card-text>
                       <div class="text-center">
-                        <v-btn
-                          tile
-                          outlined
-                          dark
-                          href="/registro"
-                          >
-                        REGISTRATE</v-btn>
+                        <router-link
+                          style="text-decoration: none;
+                          color: inherit;"
+                          to="/registro"
+                          ><v-btn
+                            tile
+                            outlined
+                            dark
+                            >
+                          REGISTRATE</v-btn>
+                        </router-link>
                       </div>
                       </div>
                     </v-col>
                   </v-row>
-<!-- ---------------------------------------------------------------Registrarse------------------------------------------------------------------- -->
             </v-card>
           </v-col>
       </v-row>
