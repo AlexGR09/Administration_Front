@@ -8,7 +8,7 @@
             <v-card
               class="mx-auto mt-5"
               max-width="944"
-              height="180px"
+              height="195px"
             ><v-row>
               <v-col
                 cols="12"
