@@ -51,6 +51,7 @@
               </v-card-title>
               <v-card-subtitle>
               <h5>GenesisOrdonezP</h5>
+
               </v-card-subtitle>
               <v-card-actions>
                 <v-spacer></v-spacer>
