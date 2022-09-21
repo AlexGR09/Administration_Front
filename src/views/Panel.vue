@@ -10,16 +10,16 @@
               max-width="944"
               height="195px"
             ><v-row>
-              <v-col
-                cols="12"
-                md="2"
-                >
-                <v-avatar
-                    class="ml-2 mx-auto"
-                    color="#29c1cc"
-                    tile
-                    size="150"
-                >
+               <v-col
+                 cols="12"
+                 md="2"
+              >
+                 <v-avatar
+                   class="ml-2 mx-auto"
+                   color="#29c1cc"
+                   tile
+                   size="150"
+                 >
                   <v-icon
                   dark
                   size="140"
