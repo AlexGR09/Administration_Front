@@ -35,25 +35,21 @@
               <v-card-title>
                 <h1>Génesis Ordoñez Pérez</h1>
               </v-card-title>
-              <v-card-subtitle
-              >
+              <v-card-subtitle>
                 <h3 class>Acupuntura</h3>
               </v-card-subtitle>
               </v-col>
-              <v-col
-                >
+              <v-col>
               <v-card-title>
                 <h3>ID:</h3>
               </v-card-title>
-              <v-card-subtitle
-              >
+              <v-card-subtitle>
                 <h5>111234</h5>
               </v-card-subtitle>
               <v-card-title>
                 <h3>Nombre de usuario:</h3>
               </v-card-title>
-              <v-card-subtitle
-              >
+              <v-card-subtitle>
               <h5>GenesisOrdonezP</h5>
               </v-card-subtitle>
               <v-card-actions>
@@ -76,6 +72,8 @@
                 </div>
               </v-expand-transition>
             </v-card>
+            <!-- -------------------------------------------------------------------------------------------- -->
+
               <!-- <vs-card
               fixed-height="true"
               class="d-flex justify-center mb-6"
@@ -166,7 +164,7 @@
     methods: {
       getTodos () {
         console.log('peticion GET')
-        axios.get('http://127.0.0.1:8000/api/showCliente')
+        axios.get('http://127.0.0.1:8000/api/test')
           .then(res => {
             console.log(res)
             this.character = res.data.data

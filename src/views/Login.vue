@@ -23,6 +23,11 @@
                         <h5
                           class="text-center  grey--text"
                         >Ingresa con tu información para empezar a usar <br>la aplicación</h5>
+                        <form
+                        action
+                        class="form"
+                        @submit.prevent="login"
+                        >
                         <v-row
                           align="center"
                           justify="center"
@@ -33,6 +38,7 @@
                           >
                           <v-text-field
                             label="Email"
+                            v-model="email"
                             outlined
                             dense
                             color="#ef8f71"
@@ -41,6 +47,7 @@
                           />
                           <v-text-field
                             label="Password"
+                            v-model="password"
                             outlined
                             dense
                             color="#ef8f71"
@@ -69,7 +76,7 @@
                             </v-row>
                             <router-link
                           style="text-decoration: none;
-                          color: inherit;"
+                          color: inherit"
                           to="/registro"
                           >
                           <v-btn
@@ -108,6 +115,16 @@
                          </div>
                           </v-col>
                         </v-row>
+                        <p
+                        v-if="error"
+                        class="error"
+                        >Has introducido mal el email o la contraseña.</p>
+                        <input
+                        class="form-submit"
+                        type="submit"
+                        value="Login"
+                        >
+                        </form>
                       </v-card-text>
                     </v-col>
                     <v-col
@@ -149,11 +166,22 @@
 <script>
   import logbar from '@/components/logbar.vue'
   export default {
+    data: () => ({
+      email: '',
+      password: '',
+      error: false,
+    }),
     components: {
       logbar,
     },
     props: {
       source: String,
+    },
+    methods: {
+      login () {
+        console.log(this.email)
+        console.log(this.password)
+      },
     },
   }
 </script>
