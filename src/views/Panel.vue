@@ -8,17 +8,17 @@
             <v-hover
               v-slot="{ hover }"
               open-delay="200"
+              v-for="character in characters" :key="character.id"
             >
               <v-card
-                v-for="character in characters"
-                :key="character.id"
-                :elevation="hover ? 16 : 2"
+              :elevation="hover ? 16 : 2"
                 :class="{ 'on-hover': hover }"
                 class="mx-auto mt-5"
-                max-width="944"
+                max-width="1244"
                 height="195px"
+               
               >
-                <v-row>
+                <v-row >
                   <v-col
                     cols="12"
                     md="2"
@@ -39,14 +39,14 @@
                   </v-col>
                   <v-col
                     cols="12"
-                    md="7"
+                    md="6"
                   >
                     <v-card-title>
-                      <h1> {{ character.nombre }} </h1>
+                      <h1>aa{{character.username }}</h1>
                     </v-card-title>
                     <v-card-subtitle>
                       <h3 class>
-                        {{ character.apellidopaterno }}
+                        {{ character.apellidopaterno }} -->
                       </h3>
                     </v-card-subtitle>
                   </v-col>
@@ -56,7 +56,7 @@
                     </v-card-title>
                     <v-card-subtitle>
                       <h5>
-                        {{ character.id }}
+                        aaa <!-- {{ character.id }} -->
                       </h5>
                     </v-card-subtitle>
                     <v-card-title>
@@ -66,7 +66,7 @@
                     </v-card-title>
                     <v-card-subtitle>
                       <h5>
-                        {{ character.username }}
+                        a
                       </h5>
                     </v-card-subtitle>
                     <v-card-actions>
@@ -84,10 +84,10 @@
                   <div v-show="show">
                     <v-divider></v-divider>
                     <v-card-text>
-                      <v-row>
+                       <v-row>
                         <v-icon
                           large
-                          color="blue darken-2"
+                          color="cyan darken-1 darken-2"
                         >
                           mdi mdi-cellphone
                         </v-icon>
@@ -96,7 +96,7 @@
                           md="3"
                         >
                           <v-text-field
-                            :value="character.telefonopersonal"
+
                             label="Teléfono (personal)"
                             hide-details
                             filled
@@ -117,7 +117,7 @@
                         </v-col>
                         <v-icon
                           large
-                          color="blue darken-2"
+                          color="cyan darken-1 darken-2"
                         >
                           mdi mdi-email
                         </v-icon>
@@ -126,7 +126,7 @@
                           md="5"
                         >
                           <v-text-field
-                            :value="character.email"
+                          :value="character.email"
                             label="Email"
                             hide-details
                             filled
@@ -135,7 +135,7 @@
                         </v-col>
                         <v-icon
                           large
-                          color="blue darken-2"
+                          color="cyan darken-1 darken-2"
                         >
                           mdi mdi-calendar
                         </v-icon>
@@ -144,9 +144,9 @@
                           md="4"
                         >
                           <v-text-field
-                            :value="character.fechanacimiento"
                             label="Fecha de nacimiento"
                             filled
+                            hide-details
                             readonly
                           />
                         </v-col>
@@ -155,7 +155,6 @@
                           md="2"
                         >
                           <v-text-field
-                            :value="character.edad"
                             label="Edad"
                             filled
                             hide-details
@@ -165,7 +164,7 @@
                         </v-col>
                         <v-icon
                           large
-                          color="blue darken-2"
+                          color="cyan darken-1 darken-2"
                         >
                           mdi mdi-account
                         </v-icon>
@@ -174,7 +173,6 @@
                           md="5"
                         >
                           <v-text-field
-                            :value="character.genero"
                             label="Genero"
                             filled
                             hide-details
@@ -183,15 +181,14 @@
                         </v-col>
                         <v-icon
                           large
-                          color="blue darken-2"
+                          color="cyan darken-1 darken-2"
                         >mdi-map-marker-radius
                         </v-icon>
                         <v-col
-                          cols="4"
+                          cols="12"
                           md="3"
                         >
                           <v-text-field
-                            :value="character.municipio_id"
                             label="Municipio"
                             filled
                             hide-details
@@ -204,7 +201,6 @@
                           md="4"
                         >
                           <v-text-field
-                            :value="character.municipio_id"
                             label="Entidad"
                             filled
                             hide-details
@@ -217,7 +213,6 @@
                           md="4"
                         >
                           <v-text-field
-                            :value="character.municipio_id"
                             label="Localidad"
                             filled
                             hide-details
