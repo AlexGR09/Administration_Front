@@ -9,7 +9,9 @@
               class="mx-auto mt-5"
               max-width="944"
               height="195px"
-            ><v-row>
+              v-for="character in characters" :key="character.id"
+              
+            ><v-row >
                <v-col
                  cols="12"
                  md="2"
@@ -33,10 +35,10 @@
                 md="7"
                 >
               <v-card-title>
-                <h1>Génesis Ordoñez Pérez</h1>
+                <h1>{{character.nombre}}</h1>
               </v-card-title>
               <v-card-subtitle>
-                <h3 class>Acupuntura</h3>
+                <h3 class>{{character.apellidopaterno}}</h3>
               </v-card-subtitle>
               </v-col>
               <v-col>
@@ -44,13 +46,13 @@
                 <h3>ID:</h3>
               </v-card-title>
               <v-card-subtitle>
-                <h5>111234</h5>
+                <h5>{{character.id}}</h5>
               </v-card-subtitle>
               <v-card-title>
                 <h3>Nombre de usuario:</h3>
               </v-card-title>
               <v-card-subtitle>
-              <h5>GenesisOrdonezP</h5>
+              <h5>{{character.username}}</h5>
 
               </v-card-subtitle>
               <v-card-actions>
@@ -154,7 +156,7 @@
     data () {
       return {
         show: false,
-        character: [],
+        characters: [],
       }
     },
 
@@ -165,10 +167,10 @@
     methods: {
       getTodos () {
         console.log('peticion GET')
-        axios.get('http://127.0.0.1:8000/api/test')
+        axios.get('http://127.0.0.1:8000/api/test/')
           .then(res => {
             console.log(res)
-            this.character = res.data.data
+            this.characters = res.data.data
           })
           .catch(e => {
             console.log(e)
