@@ -6,215 +6,232 @@
           <v-col>
             <v-col></v-col>
             <v-hover
-            v-slot="{ hover }"
-            open-delay="200"
-          >
-            <v-card
-            :elevation="hover ? 16 : 2"
-            :class="{ 'on-hover': hover }"
-              class="mx-auto mt-5"
-              max-width="944"
-              height="195px"
-              v-for="character in characters" :key="character.id"
-              
-            ><v-row >
-               <v-col
-                 cols="12"
-                 md="2"
+              v-slot="{ hover }"
+              open-delay="200"
+            >
+              <v-card
+                v-for="character in characters"
+                :key="character.id"
+                :elevation="hover ? 16 : 2"
+                :class="{ 'on-hover': hover }"
+                class="mx-auto mt-5"
+                max-width="944"
+                height="195px"
               >
-                 <v-avatar
-                   class="ml-2 mx-auto"
-                   color="#29c1cc"
-                   tile
-                   size="150"
-                 >
-                  <v-icon
-                  dark
-                  size="140"
+                <v-row>
+                  <v-col
+                    cols="12"
+                    md="2"
                   >
-                  mdi-doctor
-                  </v-icon>
-      </v-avatar>
-              </v-col>
-              <v-col
-              cols="12"
-                md="7"
-                >
-              <v-card-title>
-                <h1>{{character.nombre}}</h1>
-              </v-card-title>
-              <v-card-subtitle>
-                <h3 class>{{character.apellidopaterno}}</h3>
-              </v-card-subtitle>
-              </v-col>
-              <v-col>
-              <v-card-title>
-                <h3>ID:</h3>
-              </v-card-title>
-              <v-card-subtitle>
-                <h5>{{character.id}}</h5>
-              </v-card-subtitle>
-              <v-card-title>
-                <h3>Nombre de usuario:</h3>
-              </v-card-title>
-              <v-card-subtitle>
-              <h5>{{character.username}}</h5>
-
-              </v-card-subtitle>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn
-                  icon
-                  @click="show = !show"
-                >
-                  <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-                </v-btn>
-              </v-card-actions>
-              </v-col>
-            </v-row>
-              <v-expand-transition>
-                <div v-show="show">
-                  <v-divider></v-divider>
-                  <v-card-text>
-                    <v-row>
-                    <v-icon
-                      large
-                      color="blue darken-2"
-                      >mdi mdi-cellphone
-                    </v-icon>
+                    <v-avatar
+                      class="ml-2 mx-auto"
+                      color="#29c1cc"
+                      tile
+                      size="150"
+                    >
+                      <v-icon
+                        dark
+                        size="140"
+                      >
+                        mdi-doctor
+                      </v-icon>
+                    </v-avatar>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                    md="7"
+                  >
+                    <v-card-title>
+                      <h1> {{ character.nombre }} </h1>
+                    </v-card-title>
+                    <v-card-subtitle>
+                      <h3 class>
+                        {{ character.apellidopaterno }}
+                      </h3>
+                    </v-card-subtitle>
+                  </v-col>
+                  <v-col>
+                    <v-card-title>
+                      <h3>ID:</h3>
+                    </v-card-title>
+                    <v-card-subtitle>
+                      <h5>
+                        {{ character.id }}
+                      </h5>
+                    </v-card-subtitle>
+                    <v-card-title>
+                      <h3>
+                        Nombre de usuario:
+                      </h3>
+                    </v-card-title>
+                    <v-card-subtitle>
+                      <h5>
+                        {{ character.username }}
+                      </h5>
+                    </v-card-subtitle>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn
+                        icon
+                        @click="show = !show"
+                      >
+                        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                      </v-btn>
+                    </v-card-actions>
+                  </v-col>
+                </v-row>
+                <v-expand-transition>
+                  <div v-show="show">
+                    <v-divider></v-divider>
+                    <v-card-text>
+                      <v-row>
+                        <v-icon
+                          large
+                          color="blue darken-2"
+                        >
+                          mdi mdi-cellphone
+                        </v-icon>
                         <v-col
-                        cols="12"
-                        md="3"
-                    >
-                    <v-text-field
-                    :value="character.telefonopersonal"
-                    label="Teléfono (personal)"
-                    
-                    hide-details
-                    filled
-                    readonly
-                        ></v-text-field>
-                    </v-col>
-                    <v-col
-                        cols="4"
-                        md="3"
-                    >
-                    <v-text-field
-                        color="purple"
-                        label="Teléfono"
-                        hide-details
-                        filled
-                    />
-                    </v-col>
-                    <v-icon
-                      large
-                      color="blue darken-2"
-                      >mdi mdi-email
-                    </v-icon>
-                    <v-col
-                        cols="4"
-                        md="5"
-                    >
-                    <v-text-field
-                    :value="character.email"
-                    label="Email"
-                    hide-details
-                    filled
-                    readonly
-                    />
-                    </v-col>
-                    <v-icon
-                      large
-                      color="blue darken-2"
-                      >mdi mdi-calendar
-                    </v-icon>
-                    <v-col
-                        cols="4"
-                        md="4"
-                    >
-                    <v-text-field
-                    :value="character.fechanacimiento"
-                    label="Fecha de nacimiento"
-                    filled
-                    readonly
-                    />
-                    </v-col>
-                    <v-col
-                        cols="4"
-                        md="2"
-                    >
-                    <v-text-field
-                    :value="character.edad"
-                    label="Edad"
-                    filled
-                    hide-details
-                    readonly
-                        ></v-text-field>
-                    </v-col>
-                    <v-icon
-                      large
-                      color="blue darken-2"
-                      >mdi mdi-account
-                    </v-icon>
-                    <v-col
-                        cols="4"
-                        md="5"
-                    >
-                    <v-text-field
-                    :value="character.genero"
-                    label="Genero"
-                    filled
-                    hide-details
-                    readonly
-                    />
-                    </v-col>
-                    <v-icon
-                      large
-                      color="blue darken-2"
-                      >mdi-map-marker-radius
-                    </v-icon>
-                    <v-col
-                        cols="4"
-                        md="3"
-                    >
-                    <v-text-field
-                    :value="character.municipio_id"
-                    label="Municipio"
-                    filled
-                    hide-details
-                    readonly
-                        ></v-text-field>
-                    </v-col>   
-                    <v-col
-                        cols="4"
-                        md="4"
-                    >
-                    <v-text-field
-                    :value="character.municipio_id"
-                    label="Entidad"
-                    filled
-                    hide-details
-                    readonly
-                        ></v-text-field>
-                    </v-col>   
-                    <v-col
-                        cols="4"
-                        md="4"
-                    >
-                    <v-text-field
-                    :value="character.municipio_id"
-                    label="Localidad"
-                    filled
-                    hide-details
-                    readonly
-                        ></v-text-field>
-                    </v-col>                                            
-                </v-row> 
-                  </v-card-text>
-                </div>
-              </v-expand-transition>
-            </v-card>
-          </v-hover> </v-col>
+                          cols="12"
+                          md="3"
+                        >
+                          <v-text-field
+                            :value="character.telefonopersonal"
+                            label="Teléfono (personal)"
+                            hide-details
+                            filled
+                            readonly
+                          >
+                          </v-text-field>
+                        </v-col>
+                        <v-col
+                          cols="4"
+                          md="3"
+                        >
+                          <v-text-field
+                            color="purple"
+                            label="Teléfono"
+                            hide-details
+                            filled
+                          />
+                        </v-col>
+                        <v-icon
+                          large
+                          color="blue darken-2"
+                        >
+                          mdi mdi-email
+                        </v-icon>
+                        <v-col
+                          cols="4"
+                          md="5"
+                        >
+                          <v-text-field
+                            :value="character.email"
+                            label="Email"
+                            hide-details
+                            filled
+                            readonly
+                          />
+                        </v-col>
+                        <v-icon
+                          large
+                          color="blue darken-2"
+                        >
+                          mdi mdi-calendar
+                        </v-icon>
+                        <v-col
+                          cols="4"
+                          md="4"
+                        >
+                          <v-text-field
+                            :value="character.fechanacimiento"
+                            label="Fecha de nacimiento"
+                            filled
+                            readonly
+                          />
+                        </v-col>
+                        <v-col
+                          cols="4"
+                          md="2"
+                        >
+                          <v-text-field
+                            :value="character.edad"
+                            label="Edad"
+                            filled
+                            hide-details
+                            readonly
+                          >
+                          </v-text-field>
+                        </v-col>
+                        <v-icon
+                          large
+                          color="blue darken-2"
+                        >
+                          mdi mdi-account
+                        </v-icon>
+                        <v-col
+                          cols="4"
+                          md="5"
+                        >
+                          <v-text-field
+                            :value="character.genero"
+                            label="Genero"
+                            filled
+                            hide-details
+                            readonly
+                          />
+                        </v-col>
+                        <v-icon
+                          large
+                          color="blue darken-2"
+                        >mdi-map-marker-radius
+                        </v-icon>
+                        <v-col
+                          cols="4"
+                          md="3"
+                        >
+                          <v-text-field
+                            :value="character.municipio_id"
+                            label="Municipio"
+                            filled
+                            hide-details
+                            readonly
+                          >
+                          </v-text-field>
+                        </v-col>
+                        <v-col
+                          cols="4"
+                          md="4"
+                        >
+                          <v-text-field
+                            :value="character.municipio_id"
+                            label="Entidad"
+                            filled
+                            hide-details
+                            readonly
+                          >
+                          </v-text-field>
+                        </v-col>
+                        <v-col
+                          cols="4"
+                          md="4"
+                        >
+                          <v-text-field
+                            :value="character.municipio_id"
+                            label="Localidad"
+                            filled
+                            hide-details
+                            readonly
+                          >
+                          </v-text-field>
+                        </v-col>
+                      </v-row>
+                    </v-card-text>
+                  </div>
+                </v-expand-transition>
+              </v-card>
+            </v-hover>
+          </v-col>
         </v-row>
       </v-col>
     </v-row>

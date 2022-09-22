@@ -77,14 +77,13 @@
                             <router-link
                           style="text-decoration: none;
                           color: inherit"
-                          to="/registro"
+                          to="/panel"
                           >
                           <v-btn
                           color="#1dbec7"
                           dark
                           block
                           tile
-                          href="/panel"
                           >ACCEDER</v-btn>
                         </router-link>
                          <h5
@@ -115,7 +114,7 @@
                          </div>
                           </v-col>
                         </v-row>
-                        <p
+                        <!-- <p
                         v-if="error"
                         class="error"
                         >Has introducido mal el email o la contraseña.</p>
@@ -123,7 +122,7 @@
                         class="form-submit"
                         type="submit"
                         value="Login"
-                        >
+                        > -->
                         </form>
                       </v-card-text>
                     </v-col>
