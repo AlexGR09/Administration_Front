@@ -5,7 +5,13 @@
         <v-row>
           <v-col>
             <v-col></v-col>
+            <v-hover
+            v-slot="{ hover }"
+            open-delay="200"
+          >
             <v-card
+            :elevation="hover ? 16 : 2"
+            :class="{ 'on-hover': hover }"
               class="mx-auto mt-5"
               max-width="944"
               height="195px"
@@ -70,46 +76,145 @@
                 <div v-show="show">
                   <v-divider></v-divider>
                   <v-card-text>
-                    I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.
+                    <v-row>
+                    <v-icon
+                      large
+                      color="blue darken-2"
+                      >mdi mdi-cellphone
+                    </v-icon>
+                        <v-col
+                        cols="12"
+                        md="3"
+                    >
+                    <v-text-field
+                    :value="character.telefonopersonal"
+                    label="Teléfono (personal)"
+                    
+                    hide-details
+                    filled
+                    readonly
+                        ></v-text-field>
+                    </v-col>
+                    <v-col
+                        cols="4"
+                        md="3"
+                    >
+                    <v-text-field
+                        color="purple"
+                        label="Teléfono"
+                        hide-details
+                        filled
+                    />
+                    </v-col>
+                    <v-icon
+                      large
+                      color="blue darken-2"
+                      >mdi mdi-email
+                    </v-icon>
+                    <v-col
+                        cols="4"
+                        md="5"
+                    >
+                    <v-text-field
+                    :value="character.email"
+                    label="Email"
+                    hide-details
+                    filled
+                    readonly
+                    />
+                    </v-col>
+                    <v-icon
+                      large
+                      color="blue darken-2"
+                      >mdi mdi-calendar
+                    </v-icon>
+                    <v-col
+                        cols="4"
+                        md="4"
+                    >
+                    <v-text-field
+                    :value="character.fechanacimiento"
+                    label="Fecha de nacimiento"
+                    filled
+                    readonly
+                    />
+                    </v-col>
+                    <v-col
+                        cols="4"
+                        md="2"
+                    >
+                    <v-text-field
+                    :value="character.edad"
+                    label="Edad"
+                    filled
+                    hide-details
+                    readonly
+                        ></v-text-field>
+                    </v-col>
+                    <v-icon
+                      large
+                      color="blue darken-2"
+                      >mdi mdi-account
+                    </v-icon>
+                    <v-col
+                        cols="4"
+                        md="5"
+                    >
+                    <v-text-field
+                    :value="character.genero"
+                    label="Genero"
+                    filled
+                    hide-details
+                    readonly
+                    />
+                    </v-col>
+                    <v-icon
+                      large
+                      color="blue darken-2"
+                      >mdi-map-marker-radius
+                    </v-icon>
+                    <v-col
+                        cols="4"
+                        md="3"
+                    >
+                    <v-text-field
+                    :value="character.municipio_id"
+                    label="Municipio"
+                    filled
+                    hide-details
+                    readonly
+                        ></v-text-field>
+                    </v-col>   
+                    <v-col
+                        cols="4"
+                        md="4"
+                    >
+                    <v-text-field
+                    :value="character.municipio_id"
+                    label="Entidad"
+                    filled
+                    hide-details
+                    readonly
+                        ></v-text-field>
+                    </v-col>   
+                    <v-col
+                        cols="4"
+                        md="4"
+                    >
+                    <v-text-field
+                    :value="character.municipio_id"
+                    label="Localidad"
+                    filled
+                    hide-details
+                    readonly
+                        ></v-text-field>
+                    </v-col>                                            
+                </v-row> 
                   </v-card-text>
                 </div>
               </v-expand-transition>
             </v-card>
-            <!-- -------------------------------------------------------------------------------------------- -->
-
-              <!-- <vs-card
-              fixed-height="true"
-              class="d-flex justify-center mb-6"
-              type="3"
-              >
-                <template #title>
-                  <h3>Juán Pérez Rodriguez</h3>
-                </template>
-                <template #img>
-                  <v-avatar
-                    color="#29c1cc"
-                    tile
-                    size="450"
-                >
-                  <v-icon
-                  size="200"
-                  dark
-                  >
-                  mdi-doctor
-                  </v-icon>
-      </v-avatar>
-                </template>
-                <template
-                #text
-                >
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  </p>
-                </template>
-                <template #interactions>
-                </template>
-              </vs-card> -->
-      </v-col>
+          </v-hover> </v-col>
         </v-row>
       </v-col>
     </v-row>
@@ -125,28 +230,6 @@
   Vue.use(Vuesax, {
     // options here
   })
-  /*   export default {
-    data: () => ({
-      return {
-        character = []
-    },
-    show: false,
-  }),
-    components: {
-      BarraCliente,
-    },
-
-  mounted(){
-    console.log('datos');
-    this.getDatos();
-  },
-  methods: {
-    getDatos() {
-      axios.get('http://127.0.0.1:8000/api/showCliente')
-      .then(res=>)
-    }
-  }, */
-
   export default {
     name: 'panel',
     components: {
