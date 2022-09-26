@@ -15,7 +15,7 @@
               :elevation="hover ? 16 : 2"
                 :class="{ 'on-hover': hover }"
                 class="mx-auto mt-5"
-                max-width="1244"
+                width="1244"
                 height="195px"
               >
                 <v-row>
@@ -39,14 +39,15 @@
                   </v-col>
                   <v-col
                     cols="12"
-                    md="6"
+                    md="7"
                   >
                     <v-card-title>
-                      <h1>{{character.nombre }}</h1>
+                      <h1>{{character.nombreusuario }}</h1>
                     </v-card-title>
-                    <v-card-subtitle>
+                    <v-card-subtitle
+                    >
                       <h3 class>
-                        {{ character.apellidopaterno }} -->
+                        {{ character.titulo }}
                       </h3>
                     </v-card-subtitle>
                   </v-col>
@@ -110,7 +111,7 @@
                           </v-chip>
                           <datos-usuario />
                           <v-chip
-                            class="mt-2"
+                            class="mt-3"
                             color="primary"
                             label
                           >
@@ -121,11 +122,13 @@
                     </v-card-text>
                           <v-card-actions class="justify-end">
                             <v-btn
+                              class="error"
                               text
                               @click="dialog.value = false"
-                            >Close</v-btn>
+                            >Cancelar</v-btn>
                             <v-btn
                               text
+                              class="secondary"
                               @click="dialog.value = false"
                             >Guardar</v-btn>
                           </v-card-actions>
@@ -146,7 +149,7 @@
   </div>
 </template>
 <script>
-  import BarraCliente from '@/components/BarraCliente.vue'
+  import BarraCliente from '@/components/ComponentsClient/BarraCliente.vue'
   import DatosCliente from '@/components/ComponentsClient/DatosCliente.vue'
   import DatosUsuario from '@/components/ComponentsUser/DatosUsuario.vue'
   import Vue from 'vue'

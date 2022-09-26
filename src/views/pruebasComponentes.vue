@@ -1,11 +1,19 @@
-<template>
-   <card /> 
+<!-- <template>
+ <div>
+    <barra-cliente />
+    <nav-bar />
+   <logbar />
+   </div>
 </template>
 <script>
-  import Card from '@/components/app/Card.vue'
+  import NavBar from '@/components/NavBar.vue'
+  import logbar from '@/components/logbar.vue'
+  import BarraCliente from '@/components/BarraCliente.vue'
   export default {
     components: {
-      Card,
+      logbar,
+      BarraCliente,
+      NavBar
     },
 }
-</script>
+</script> -->

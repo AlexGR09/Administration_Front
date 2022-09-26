@@ -1,8 +1,10 @@
 <template>
-  <v-card class = "mt-5 lg-16">
+  <v-card>
     <v-card-text
+    class ="mt-3"
     v-for="character in characters"
-              :key="character.id">
+              :key="character.id"
+              >
       <v-row>
         <v-icon
           large
@@ -98,6 +100,7 @@
           md="3"
         >
           <v-text-field
+          :value="character.especialidad_id"
             label="Especialidad"
             filled
             hide-details
@@ -120,7 +123,7 @@
   })
   export default {
     name: 'DatosCliente',
-     data () {
+    data () {
       return {
         characters: [],
       }
