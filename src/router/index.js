@@ -24,13 +24,13 @@ const router = new Router({
 
       // Pages
       route('Register', null, '/registro'),
-      route('Panel', null, '/panel'),
-      route('DashboardVentas', null, '/ventas/dashboard'),
-      route('Cuestionario', null, '/ventas/cuestionario'),
-      route('CreateUser', null, '/ventas/newuser'),
-      route('ventas', null, '/ventas'),
+      route('Cliente/Panel', null, '/panel'),
+      route('Ventas/DashboardVentas', null, '/ventas/dashboard'),
+      route('Ventas/Cuestionario', null, '/ventas/cuestionario'),
+      route('Ventas/CreateUser', null, '/ventas/newuser'),
       // Components
-      route('Notifications', null, '/ventas/notifications'),
+      route('Ventas/Notifications', null, '/ventas/notifications'),
+      route('pruebasComponentes', null, '/componentes'),
     ]),
   ],
 })

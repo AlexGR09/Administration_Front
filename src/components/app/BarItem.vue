@@ -2,7 +2,7 @@
   import { VHover, VListItem } from 'vuetify/lib'
 
   export default {
-    name: 'AppBarItem',
+    name: 'BarItem',
 
     render (h) {
       return h(VHover, {
