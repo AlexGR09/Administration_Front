@@ -1,160 +1,153 @@
 <template>
-  <div class ="new">
+  <div class="new">
     <v-container
       id="create-user-view"
       fluid
       tag="section"
     >
-         <v-row>
-             <v-col cols="12">
-             <v-row justify="center">
-                 <v-col
-                 cols="12"
-                 md="10"
-                 >
-                 <v-col
-                 class="mt-5"
-                 cols="12"
-                 md="12"
-                 >
-                     <material-card
-                         color="primary"
-                         icon="mdi-home-map-marker"
-                         >
-                             <template #title>
-                                 Nuevo establecimiento — <small class="text-body-1">Completa con los nuevos datos</small>
-                             </template>
-                             <v-form>
-                                 <v-container class="py-0">
-                                     <v-row>
-                                         <v-col
-                                                 cols="4"
-                                                 md="12"
-                                             >
-                                         <v-stepper
-                                         v-model="e13"
-                                         vertical
-                                         >
-                                         <v-stepper-step
-                                             step="1"
-                                             complete
-                                         >
-                                             Información oficial
-                                         </v-stepper-step>
-                                         <v-stepper-content step="1">
-                                             <v-card>
-                                             <v-row>
-                                                 <v-col
-                                                 cols="12"
-                                                 md="4"
-                                             >
-                                             <v-autocomplete
-                                                 :items="Clientes"
-                                                 dense
-                                                 filled
-                                                 hide-details
-                                                 label="Cliente asignado"
-                                                 ></v-autocomplete>
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="4"
-                                             >
-                                             <v-autocomplete
-                                                :items="tipoubi"
-                                                 color="purple"
-                                                 label="Tipo de ubicacion"
-                                                 hide-details
-                                                 filled
-                                             />
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="4"
-                                             >
-                                             <v-text-field
-                                                 filled
-                                                 dense
-                                                 chips
-                                                 hide-details
-                                                 small-chips
-                                                 label="Email"
-                                                 multiple
-                                                 ></v-text-field>
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="6"
-                                             >
-                                             <v-text-field
-                                                 color="purple"
-                                                 hide-details
-                                                 label="Aviso de funcionamiento COFEPRIS"
-                                                 filled
-                                             />
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="6"
-                                             >
-                                             <v-text-field
-                                                 color="purple"
-                                                 hide-details
-                                                 label="Aviso de publicidad COFEPRIS"
-                                                 filled
-                                             />
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="4"
-                                             >
-                                             <v-text-field
-                                                 color="purple"
-                                                 hide-details
-                                                 label="Teléfono citas"
-                                                 filled
-                                             />
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="4"
-                                             >
-                                             <v-autocomplete
-                                              :items="tipotel"
-                                                 filled
-                                                 dense
-                                                 hide-details
-                                                 chips
-                                                 small-chips
-                                                 label="Tipo telefono"
-                                                 multiple
-                                                 ></v-autocomplete>
-                                             </v-col>
-                                             <v-col
-                                                 cols="4"
-                                                 md="4"
-                                             >
-                                             <v-text-field
-                                              :items="especialidades"
-                                                 filled
-                                                 dense
-                                                 hide-details
-                                                 chips
-                                                 small-chips
-                                                 label="Telefono"
-                                                 multiple
-                                                 ></v-text-field>
-                                             </v-col>
-                                         </v-row>
+      <v-row>
+        <v-col cols="12">
+          <v-row justify="center">
+            <v-col
+              cols="12"
+              md="11"
+            >
+              <v-col
+                class="mt-5"
+                cols="12"
+                md="12"
+              >
+                <material-card
+                  color="primary"
+                  icon="mdi-home-map-marker"
+                >
+                  <template #title>
+                    Nuevo establecimiento — <small class="text-body-1">Completa con los nuevos datos</small>
+                  </template>
+                  <v-form>
+                    <v-container class="py-0">
+                      <v-row>
+                        <v-col
+                          cols="4"
+                          md="12"
+                        >
+                          <v-stepper
+                            v-model="e13"
+                            vertical
+                          >
+                            <v-stepper-step
+                              step="1"
+                              complete
+                            >
+                              Información oficial
+                            </v-stepper-step>
+                            <v-stepper-content step="1">
+                                <v-card>
+                                  <v-row>
+                                    <v-col
+                                      cols="12"
+                                      md="4"
+                                    >
+                                      <v-autocomplete
+                                        :items="characters"
+                                        v-if="characters"
+                                        dense
+                                        filled
+                                        label="Cliente asignado"
+                                      >{{characters.nombre}}</v-autocomplete>
+                                    </v-col>
+                                    <v-col
+                                      cols="4"
+                                      md="4"
+                                    >
+                                      <v-autocomplete
+                                        :items="tipoubi"
+                                        color="purple"
+                                        label="Tipo de ubicacion"
+                                        filled
+                                      />
+                                    </v-col>
+                                    <v-col
+                                      cols="4"
+                                      md="4"
+                                    >
+                                    <v-text-field
+                                        filled
+                                        dense
+                                        chips
+                                        small-chips
+                                        label="Email"
+                                        multiple
+                                        ></v-text-field>
+                                    </v-col>
+                                    <v-col
+                                        cols="4"
+                                        md="6"
+                                    >
+                                    <v-text-field
+                                        color="purple"
+                                        label="Aviso de funcionamiento COFEPRIS"
+                                        filled
+                                    />
+                                    </v-col>
+                                    <v-col
+                                        cols="4"
+                                        md="6"
+                                    >
+                                    <v-text-field
+                                        color="purple"
+                                        label="Aviso de publicidad COFEPRIS"
+                                        filled
+                                    />
+                                    </v-col>
+                                    <v-col
+                                        cols="4"
+                                        md="4"
+                                    >
+                                    <v-text-field
+                                        color="purple"
+                                        label="Teléfono citas"
+                                        filled
+                                    />
+                                    </v-col>
+                                    <v-col
+                                        cols="4"
+                                        md="4"
+                                    >
+                                    <v-autocomplete
+                                    :items="tipotel"
+                                        filled
+                                        dense
+                                        chips
+                                        small-chips
+                                        label="Tipo telefono"
+                                        multiple
+                                        ></v-autocomplete>
+                                    </v-col>
+                                    <v-col
+                                        cols="4"
+                                        md="4"
+                                    >
+                                    <v-text-field
+                                    :items="especialidades"
+                                        filled
+                                        dense
+                                        chips
+                                        small-chips
+                                        label="Telefono"
+                                        multiple
+                                        ></v-text-field>
+                                    </v-col>
+                                </v-row>
                                          <v-btn
                                              color="primary"
                                              @click="e13 = 2"
                                              >
                                              Continue
                                              </v-btn>
-                                         <v-divider></v-divider>
                                          </v-card>
                                          </v-stepper-content>
+                                         <v-divider class="mt-8 ml-8"></v-divider>
                                          <v-stepper-step
                                              step="2"
                                              complete
@@ -165,13 +158,13 @@
                                              <v-row>
                                                  <v-col
                                                  cols="4"
-                                                 md="6"
+                                                 md="2"
                                              >
-                                             <v-text-field
+                                             <v-autocomplete
+                                                :items="vialidad"
                                                  color="purple"
                                                  label="Tipo de vialidad"
                                                  filled
-                                                hide-details
                                              />
                                              </v-col>
                                              <v-col
@@ -182,83 +175,70 @@
                                                  color="purple"
                                                  label="Nombre vialidad"
                                                  filled
-                                                hide-details
                                              />
                                              </v-col>
                                              <v-col
                                                  cols="4"
-                                                 md="6"
+                                                 md="2"
                                              >
                                              <v-text-field
                                                  color="purple"
                                                  label="Num. Exterior"
                                                  filled
-                                                hide-details
                                              />
                                              </v-col>
                                              <v-col
                                                  cols="12"
-                                                 md="3"
+                                                 md="2"
                                              >
-                                             <v-autocomplete
-                                                 :items="alcance"
+                                             <v-text-field
                                                  dense
-                                                 hide-details
                                                  filled
                                                  label="Num. Interior"
-                                                 ></v-autocomplete>
+                                                 ></v-text-field>
                                              </v-col>
                                              <v-col
                                                  cols="12"
-                                                 md="3"
+                                                 md="2"
                                              >
                                              <v-autocomplete
                                                  :items="tipo"
                                                  dense
-                                                 hide-details
                                                  filled
                                                  label="Tipo de colonia"
                                                  ></v-autocomplete>
                                              </v-col>
                                              <v-col
                                                  cols="4"
-                                                 md="2"
+                                                 md="6"
                                              >
                                              <v-text-field
                                                  color="purple"
                                                  label="Nombre de colonia"
                                                  filled
-                                                hide-details
                                              />
                                              </v-col>
                                              <v-col
                                                  cols="4"
-                                                 md="2"
+                                                 md="4"
                                              >
                                              <v-text-field
                                                  color="purple"
                                                  label="Código postal"
                                                  filled
-                                                hide-details
                                              />
                                              </v-col>
                                              <v-col
                                                  cols="4"
-                                                 md="6"
+                                                 md="4"
                                              >
                                              <v-file-input
                                                  label="Imagen establecimiento"
                                                  filled
-                                                 hide-details
+                                                 height="40"
                                                  ></v-file-input>
                                              </v-col>
                                              </v-row>
-                                             <v-btn
-                                             color="primary"
-                                             @click="e13 = 3"
-                                             >
-                                             Finalizar
-                                             </v-btn>
                                              <v-divider
                                                  vertical
                                                  ></v-divider>
@@ -266,13 +246,20 @@
                                                  vertical
                                                  ></v-divider>
                                              <v-btn
-                                             color="primary"
+                                             class="mr-5"
+                                             color="secondary"
                                              @click="e13 = 1"
                                              >
                                              atras
                                              </v-btn>
-                                         <v-divider></v-divider>
+                                             <v-btn
+                                             color="primary"
+                                             @click="e13 = 3"
+                                             >
+                                             Finalizar
+                                             </v-btn>
                                          </v-stepper-content>
+                                         <v-divider class="mt-8 ml-8"></v-divider>
                                          </v-stepper>
                                          </v-col>
                                      </v-row>
@@ -288,28 +275,28 @@
    <panel-admi  />
      </div>
  </template>
- <script>
-   import PanelAdmi from '@/components/ComponentsAdmin/PanelAdmi.vue'
-   import axios from 'axios'
-   export default {
-     components: {
-        PanelAdmi,
-     },
-     data: () => ({
-       e13: 1,
-       tipoubi: ['Consultorio','Clínica','Laboratorio de análisis clínicos','Spa'],
-       Clientes: [character.nombre],
-       tipotel: ['Móvil','Casa','Trabajo'],
-       alcance: ['Cliente', 'Externo', 'Interno'],
-       tipo: ['Auxiliar publicitario', 'Médico', 'Propietario'],
-       value: null,
-       date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
-       menu: false,
-       modal: false,
-       menu2: false,
-       characters: [],
-     }),
-     mounted () {
+<script>
+  import PanelAdmi from '@/components/ComponentsAdmin/PanelAdmi.vue'
+  import axios from 'axios'
+  export default {
+    components: {
+      PanelAdmi,
+    },
+    data: () => ({
+      e13: 1,
+      tipoubi: ['Consultorio', 'Clínica', 'Laboratorio de análisis clínicos', 'Spa'],
+      /* Clientes: [character.nombre], */
+      tipotel: ['Móvil', 'Casa', 'Trabajo'],
+      vialidad: ['Vialidad', 'Calle', 'Avenida', 'Calzada', 'Boulevard', 'Ampliación', 'Andador', 'Cerrada', 'Privada', 'Callejón', 'Circuito',
+                 'Circunvalación', 'Continuación', 'Retorno', 'Pasaje', 'Corredor', 'Diagonal', 'Eje Vial', 'Peatonal', 'Periférico', 'Prolongación', 'Viaducto'],
+      value: null,
+      date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+      menu: false,
+      modal: false,
+      menu2: false,
+      characters: [],
+    }),
+    mounted () {
       console.log('verificando')
       this.getTodos()
     },
