@@ -100,11 +100,10 @@
           md="3"
         >
           <v-text-field
-          :value="character.especialidad_id"
+          :value="character.especialidad"
             label="Especialidad"
             filled
             hide-details
-            disabled
             readonly
           >
           </v-text-field>

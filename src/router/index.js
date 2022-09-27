@@ -21,16 +21,20 @@ const router = new Router({
   routes: [
     layout('Default', [
       route('Login'),
-
       // Pages
       route('Register', null, '/registro'),
-      route('Cliente/Panel', null, '/panel'),
-      route('Ventas/DashboardVentas', null, '/ventas/dashboard'),
-      route('Ventas/Cuestionario', null, '/ventas/cuestionario'),
-      route('Ventas/CreateUser', null, '/ventas/newuser'),
       // Components
       route('Ventas/Notifications', null, '/ventas/notifications'),
       route('pruebasComponentes', null, '/componentes'),
+      // Administracion
+      route('Administracion/DashboardAdmin', null, '/administracion'),
+      // Ventas
+      route('Ventas/DashboardVentas', null, '/ventas/dashboard'),
+      route('Ventas/Cuestionario', null, '/ventas/cuestionario'),
+      route('Ventas/CreateUser', null, '/ventas/newuser'),
+      // Cliente
+      route('Cliente/Panel', null, '/panel'),
+      // Contabilidad
     ]),
   ],
 })

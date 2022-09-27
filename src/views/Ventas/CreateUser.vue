@@ -643,7 +643,7 @@
     </div>
 </template>
 <script>
-  import BarraVentas from '@/components/BarraVentas.vue'
+  import BarraVentas from '@/components/ComponentsVentas/BarraVentas.vue'
   export default {
     components: {
       BarraVentas,

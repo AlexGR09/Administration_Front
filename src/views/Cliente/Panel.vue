@@ -42,10 +42,9 @@
                     md="7"
                   >
                     <v-card-title>
-                      <h1>{{character.nombreusuario }}</h1>
+                      <h1>{{character.nombre }}</h1>
                     </v-card-title>
-                    <v-card-subtitle
-                    >
+                    <v-card-subtitle>
                       <h3 class>
                         {{ character.titulo }}
                       </h3>
@@ -109,7 +108,7 @@
                           >
                             Información de usuario
                           </v-chip>
-                          <datos-usuario />
+                          <edit-datos />
                           <v-chip
                             class="mt-3"
                             color="primary"
@@ -117,7 +116,7 @@
                           >
                             Información de médico
                           </v-chip>
-                          <datos-cliente />
+                          <edit-datos-c />
                       </v-row>
                     </v-card-text>
                           <v-card-actions class="justify-end">
@@ -152,6 +151,8 @@
   import BarraCliente from '@/components/ComponentsClient/BarraCliente.vue'
   import DatosCliente from '@/components/ComponentsClient/DatosCliente.vue'
   import DatosUsuario from '@/components/ComponentsUser/DatosUsuario.vue'
+  import EditDatos from '@/components/ComponentsUser/EditDatos.vue'
+  import EditDatosC from '@/components/ComponentsClient/EditDatosC.vue'
   import Vue from 'vue'
   import Vuesax from 'vuesax'
   import 'vuesax/dist/vuesax.css'
@@ -165,6 +166,8 @@
       BarraCliente,
       DatosCliente,
       DatosUsuario,
+      EditDatos,
+      EditDatosC,
     },
 
     data () {

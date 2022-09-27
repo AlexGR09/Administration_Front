@@ -232,7 +232,7 @@
   <script>
     // Utilities
   import { get } from 'vuex-pathify'
-  import BarraVentas from '@/components/BarraVentas.vue'
+  import BarraVentas from '@/components/ComponentsVentas/BarraVentas.vue'
   import Vue from 'vue'
   const lineSmooth = Vue.chartist.Interpolation.cardinal({
     tension: 0,
