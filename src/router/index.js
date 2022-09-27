@@ -28,6 +28,9 @@ const router = new Router({
       route('pruebasComponentes', null, '/componentes'),
       // Administracion
       route('Administracion/DashboardAdmin', null, '/administracion'),
+      route('Administracion/DocOficial', null, '/admin/docs'),
+      route('Administracion/InfoFiscal', null, '/admin/info'),
+      route('Administracion/NewUbi', null, '/admin/ubicacion'),
       // Ventas
       route('Ventas/DashboardVentas', null, '/ventas/dashboard'),
       route('Ventas/Cuestionario', null, '/ventas/cuestionario'),

@@ -118,7 +118,7 @@
                     <v-list-item-content>
                       <v-list-item-title class="text-h3">
                         <strong class="mr-1 font-weight-black">MARKY</strong>
-                        <span class="primary--text">APP</span>
+                        <a class="primary--text">APP</a>
                       </v-list-item-title>
                       <v-list-item-subtitle class="text-h6">
                         Ventas
@@ -167,7 +167,7 @@
                     </v-list-item>
                     <v-list-item
                       link
-                      href="/ventas/dashboard"
+                      href="/ventas/newuser"
                     >
                       <v-list-item-icon>
                         <v-icon>mdi-account</v-icon>

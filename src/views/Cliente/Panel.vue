@@ -184,7 +184,7 @@
     methods: {
       getTodos () {
         console.log('peticion GET')
-        axios.get('http://127.0.0.1:8000/api/test/')
+        axios.get('http://127.0.0.1:8000/api/test')
           .then(res => {
             console.log(res)
             this.characters = res.data.data
