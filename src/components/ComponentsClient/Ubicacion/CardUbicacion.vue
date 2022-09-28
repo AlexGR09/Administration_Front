@@ -5,8 +5,6 @@
   >
     <v-card
     :elevation="hover ? 16 : 2"
-    v-for="character in characters"
-    :key="character.id"
       :class="{ 'on-hover': hover }"
       class="mx-auto mt-5"
       width="1244"
@@ -16,6 +14,8 @@
         <v-col
           cols="12"
           md="2"
+          v-for="character in characters"
+              :key="character.id"
         >
           <v-avatar
             class="ml-2 mx-auto"
@@ -36,8 +36,8 @@
           md="7"
         >
           <v-card-title>
-           <!--  <h1>{{character.infofiscal.nombrecolonia }}</h1> -->
-           <h1>Nombre de la ubicación</h1>
+            <h1>{{ character.nombreubicaciones }}</h1>
+          <!--  <h1>Nombre de la ubicación</h1> -->
           </v-card-title>
           <v-card-subtitle>
             <h3 class>
@@ -145,7 +145,7 @@
         axios.get('http://127.0.0.1:8000/api/test/')
           .then(res => {
             console.log(res)
-            this.characters = res.data.data
+            this.characters = res.data.data.ubicacion
           })
           .catch(e => {
             console.log(e)
