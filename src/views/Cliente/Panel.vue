@@ -42,7 +42,7 @@
                     md="7"
                   >
                     <v-card-title>
-                      <h1>{{character.nombre }}</h1>
+                      <h1>{{character.user.nombre }}</h1>
                     </v-card-title>
                     <v-card-subtitle>
                       <h3 class>
@@ -66,7 +66,7 @@
                     </v-card-title>
                     <v-card-subtitle>
                       <h5>
-                        {{ character.username }}
+                        {{ character.user.username }}
                       </h5>
                     </v-card-subtitle>
                     <v-card-actions>

@@ -16,7 +16,7 @@
           md="3"
         >
           <v-text-field
-            :value="character.telefonopersonal"
+            :value="character.user.telefonopersonal"
             label="Teléfono (personal)"
             hide-details
             filled
@@ -47,7 +47,7 @@
           md="5"
         >
           <v-text-field
-            :value="character.email"
+            :value="character.user.email"
             label="Email"
             hide-details
             filled
@@ -65,7 +65,7 @@
           md="4"
         >
           <v-text-field
-            :value="character.fechanacimiento"
+            :value="character.user.fechanacimiento"
             label="Fecha de nacimiento"
             filled
             hide-details
@@ -78,7 +78,7 @@
           md="2"
         >
           <v-text-field
-            :value="character.edad"
+            :value="character.user.edad"
             label="Edad"
             filled
             hide-details
@@ -97,7 +97,7 @@
           md="5"
         >
           <v-text-field
-            :value="character.genero"
+            :value="character.user.genero"
             label="Genero"
             filled
             hide-details
@@ -116,7 +116,7 @@
           md="3"
         >
           <v-text-field
-            :value="character.municipio.nombre"
+            :value="character.user.municipio.nombre"
             label="Municipio"
             filled
             hide-details
@@ -129,7 +129,7 @@
           md="4"
         >
           <v-text-field
-          :value="character.municipio.estado.nombre"
+          :value="character.user.municipio.estado.nombre"
             label="Estado"
             filled
             hide-details
@@ -148,7 +148,7 @@
           md="4"
         >
           <v-text-field
-            :value="character.municipio.estado.pais.nombre"
+            :value="character.user.municipio.estado.pais.nombre"
             label="Localidad"
             filled
             hide-details

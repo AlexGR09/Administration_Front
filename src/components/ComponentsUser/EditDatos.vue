@@ -17,7 +17,7 @@
           >
             <v-text-field
               value
-              :placeholder="character.telefonopersonal"
+              :placeholder="character.user.telefonopersonal"
               label="Teléfono (personal)"
               hide-details
               filled
@@ -46,7 +46,7 @@
             md="5"
           >
             <v-text-field
-              :placeholder="character.email"
+              :placeholder="character.user.email"
               label="Email"
               hide-details
               filled
@@ -76,6 +76,7 @@
                   label="Fecha de nacimiento"
                   readonly
                   hide-details
+                  :placeholder="character.user.fechanacimiento"
                   filled
                   v-bind="attrs"
                   v-on="on"
@@ -95,7 +96,7 @@
             md="2"
           >
             <v-text-field
-              :placeholder="character.edad"
+              :placeholder="character.user.edad"
               label="Edad"
               filled
               hide-details
@@ -113,7 +114,7 @@
             md="5"
           >
             <v-text-field
-              :placeholder="character.genero"
+              :placeholder="character.user.genero"
               label="Genero"
               filled
               hide-details
@@ -131,7 +132,7 @@
             md="3"
           >
             <v-text-field
-              :placeholder="character.municipio.nombre"
+              :placeholder="character.user.municipio.nombre"
               label="Municipio"
               filled
               hide-details
@@ -143,7 +144,7 @@
             md="4"
           >
             <v-text-field
-            :placeholder="character.municipio.estado.nombre"
+            :placeholder="character.user.municipio.estado.nombre"
               label="Estado"
               filled
               hide-details
@@ -162,7 +163,7 @@
           >
             <v-text-field
               value
-              :placeholder="character.municipio.estado.pais.nombre"
+              :placeholder="character.user.municipio.estado.pais.nombre"
               label="Localidad"
               filled
               hide-details
