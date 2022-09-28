@@ -100,7 +100,7 @@
           md="3"
         >
           <v-text-field
-          :value="character.especialidad"
+          :value="character.especialidad.id"
             label="Especialidad"
             filled
             hide-details

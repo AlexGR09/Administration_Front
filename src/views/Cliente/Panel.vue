@@ -138,8 +138,10 @@
                   <datos-cliente />
                   </div>
                 </v-expand-transition>
+                <card-ubicacion />
               </v-card>
             </v-hover>
+            <!-- -------------------CARD DE UBICACION--------------------- -->
           </v-col>
         </v-row>
       </v-col>
@@ -153,6 +155,8 @@
   import DatosUsuario from '@/components/ComponentsUser/DatosUsuario.vue'
   import EditDatos from '@/components/ComponentsUser/EditDatos.vue'
   import EditDatosC from '@/components/ComponentsClient/EditDatosC.vue'
+  import CardUbicacion from '@/components/ComponentsClient/Ubicacion/CardUbicacion.vue'
+  import EditarUbi from '@/components/ComponentsClient/Ubicacion/EditarUbi.vue'
   import Vue from 'vue'
   import Vuesax from 'vuesax'
   import 'vuesax/dist/vuesax.css'
@@ -168,6 +172,8 @@
       DatosUsuario,
       EditDatos,
       EditDatosC,
+      CardUbicacion,
+      EditarUbi,
     },
 
     data () {

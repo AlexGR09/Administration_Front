@@ -31,6 +31,7 @@ const router = new Router({
       route('Administracion/DocOficial', null, '/admin/docs'),
       route('Administracion/InfoFiscal', null, '/admin/info'),
       route('Administracion/NewUbi', null, '/admin/ubicacion'),
+      route('Administracion/ListarClientes', null, '/admin/clientes'),
       // Ventas
       route('Ventas/DashboardVentas', null, '/ventas/dashboard'),
       route('Ventas/Cuestionario', null, '/ventas/cuestionario'),

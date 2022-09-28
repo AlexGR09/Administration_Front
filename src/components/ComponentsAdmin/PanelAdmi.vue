@@ -201,12 +201,12 @@
                   </v-list-group>
                       <v-list-item
                         link
-                        href="/administracion"
+                        href="/admin/clientes"
                       >
                         <v-list-item-icon>
                           <v-icon>mdi-bell</v-icon>
                         </v-list-item-icon>
-                        <v-list-item-content>Notificaciones
+                        <v-list-item-content>Listar clientes
                           <!-- <router-link
                           style="text-decoration: none;
                           color: inherit;"
