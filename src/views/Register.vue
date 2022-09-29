@@ -16,6 +16,7 @@
               <v-col
                 cols="12"
                 md="6"
+                lg="6"
                 class="fondito rounded-br-xl"
               >
                 <div style="  text-align: center; padding: 180px 0;">
@@ -53,6 +54,7 @@
                         >Empecemos registrando tus datos para que puedas <br>
                         vivir la experiencia</h5>
                         <form
+                        method="POST"
                         action
                         class="form"
                         @submit.prevent="register"
@@ -320,7 +322,6 @@
   </div>
 </template>
 <script>
-  import auth from '@/logic/auth'
   import axios from 'axios'
   import logbar from '@/components/logbar.vue'
   export default {
@@ -342,37 +343,27 @@
       items: ['Femenino', 'Masculino', 'Otros'],
       value: null,
     }),
+    methods: {
+      registerIt () {
+        axios.post('http://127.0.0.1:8000/api/register', this.register)
+          .then(response => {
+            console.log(response)
+          })
+      },
+    },
     watch: {
       menu (val) {
         val && setTimeout(() => (this.activePicker = 'YEAR'))
       },
     },
-    methods: {
-      /* register () {
-          console.log(this.username);
-      console.log(this.password);
-      console.log(this.email);
-      console.log(this.name);
-      console.log(this.appa);
-      console.log(this.apma);
-      console.log(this.phone);
-      console.log(this.genero);
-      console.log(this.date);
-      console.log(this.age);
-        auth.register(this.email, this.password).then(response => {
-          console.log(response)
-        })
-      },
-      save (date) {
-        this.$refs.menu.save(date)
-      }, */
+    /* methods: {
       registerIt () {
-        axios.post('http://127.0.0.1:8000/api/register',this.register)
-        .then(response => {
-          console.log(response)
-        });
+        axios.post('http://127.0.0.1:8000/api/register', this.register)
+          .then(response => {
+            console.log(response)
+        })
       }
-    },
+    }, */
     components: {
       logbar,
     },

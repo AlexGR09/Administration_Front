@@ -23,6 +23,7 @@ const router = new Router({
       route('Login'),
       // Pages
       route('Register', null, '/registro'),
+      route('pruebaLogin', null, '/logeando'),
       // Components
       route('Ventas/Notifications', null, '/ventas/notifications'),
       route('pruebasComponentes', null, '/componentes'),

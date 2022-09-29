@@ -1,21 +1,22 @@
 <template>
   <div>
   <v-container>
+    <form @submit.prevent="iniciarSesion">
       <v-row
-      align="center"
-      justify="center"
+        align="center"
+        justify="center"
       >
-          <v-col
+        <v-col
           cols="12"
           sm="10"
-          >
-            <v-card class="elevation-6 mt-9">
+        >
+          <v-card class="elevation-6 mt-9">
 <!-- ---------------------------------------------------------------Iniciar sesion------------------------------------------------------------------- -->
-                  <v-row>
-                    <v-col
-                      cols="12"
-                      md="6"
-                    >
+            <v-row>
+              <v-col
+                cols="12"
+                md="6"
+              >
                       <v-card-text class="mt-16">
                         <h2
                           class="text-center"
@@ -74,7 +75,7 @@
                                 >¿Olvidaste tu contraseña?</span>
                               </v-col>
                             </v-row>
-                            <router-link
+                           <!--  <router-link
                           style="text-decoration: none;
                           color: inherit"
                           to="/panel"
@@ -85,7 +86,8 @@
                           block
                           tile
                           >ACCEDER</v-btn>
-                        </router-link>
+                        </router-link> -->
+                        <v-btn type="submit">ACCEDER</v-btn>
                          <h5
                          class="text-center grey--text mt-4 mb-3"
                         >O ingresa usando</h5>
@@ -157,6 +159,7 @@
             </v-card>
           </v-col>
       </v-row>
+    </form>
   </v-container>
   <logbar />
 </div>
@@ -168,7 +171,6 @@
     data: () => ({
       email: '',
       password: '',
-      error: false,
     }),
     components: {
       logbar,
@@ -177,10 +179,14 @@
       source: String,
     },
     methods: {
-      login () {
-        console.log(this.email)
-        console.log(this.password)
-      },
+      /*  async iniciarSesion()
+      {
+        var payload = {
+          email: this.email,
+          password: this.password
+        }
+        console.log(payload)
+      } */
     },
   }
 </script>
