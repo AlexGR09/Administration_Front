@@ -1,19 +1,17 @@
 <!-- <template>
  <div>
-    <barra-cliente />
-    <nav-bar />
+    <to-do-list />
    <logbar />
    </div>
 </template>
 <script>
-  import NavBar from '@/components/NavBar.vue'
+  import ToDoList from '@/components/ToDoList.vue'
   import logbar from '@/components/logbar.vue'
-  import BarraCliente from '@/components/BarraCliente.vue'
   export default {
     components: {
       logbar,
-      BarraCliente,
-      NavBar
+      ToDoList,
     },
-}
-</script> -->
+  }
+</script>
+ -->

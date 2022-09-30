@@ -1,92 +1,58 @@
 <template>
-    <v-container>
-    <v-row
-      row
-      wrap
-      class="mt-16"
-    >
-      <v-col xs12 sm12>
-        <v-card 
-        color="blue-grey darken-2" 
-        class="white--text">
-          <v-card-text primary-title class="headline mt-16">
-            What Do You Need Now?
+     <v-container class="fluid text-center">
+    <v-row>
+      <v-col
+      sm="12"
+      >
+        <v-card
+        max-width="100%"
+        color="primary"
+        class="white--text mt-5"
+        >
+          <v-card-text
+            primary-title
+            class=" white--text text-h5"
+          >
+            Bienvenido (nombre de usuario)
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
           <v-row>
-        <v-col xs12 sm4 order-md2 order-sm1 pa-2>
-          <v-card dark tile flat color="primary lighten-1" hover>
-            <v-icon x-large>mdi-home</v-icon>
-            <v-card-text class="headline">Drawings</v-card-text>
-
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md3 order-sm2 pa-2>
-          <v-card dark tile flat color="secondary lighten-1" hover>
-            <v-icon x-large>mdi-file</v-icon>
-            <v-card-text class="headline">Data</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md4 order-sm3 pa-2>
-          <v-card dark tile flat color="green" hover>
-              <v-icon x-large>mdi-doctor</v-icon>
-            <v-card-text class="headline">Contacts</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md2 order-sm1 pa-2>
-          <v-card dark tile flat color="blue lighten-1" hover>
-            <v-icon x-large>mdi-home</v-icon>
-            <v-card-text class="headline">Drawings</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md3 order-sm2 pa-2>
-          <v-card dark tile flat color="orange lighten-1" hover>
-            <v-icon x-large>mdi-file</v-icon>
-            <v-card-text class="headline">Data</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md4 order-sm3 pa-2>
-          <v-card dark tile flat color="green" hover>
-              <v-icon x-large>mdi-doctor</v-icon>
-            <v-card-text class="headline">Contacts</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md2 order-sm1 pa-2>
-          <v-card dark tile flat color="blue lighten-1" hover>
-            <v-icon x-large>mdi-home</v-icon>
-            <v-card-text class="headline">Drawings</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md3 order-sm2 pa-2>
-          <v-card dark tile flat color="orange lighten-1" hover>
-            <v-icon x-large>mdi-file</v-icon>
-            <v-card-text class="headline">Data</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col xs12 sm4 order-md4 order-sm3 pa-2>
-          <v-card
-            dark
-            tile
-            flat
-            color="green"
-            hover
-          >
-              <v-icon x-large>mdi-doctor</v-icon>
-            <v-card-text class="text-h5">Contacts</v-card-text>
-          </v-card>
-        </v-col>
+      <card-cuestionarios />
+      <card-clientes />
+      <card-usuarios />
       </v-row>
+      <to-do-list />
       <panel-admi />
     </v-container>
 </template>
 <script>
   import PanelAdmi from '@/components/ComponentsAdmin/PanelAdmi.vue'
+  import ToDoList from '@/components/ComponentsAdmin/ToDoList.vue'
+  import CardCuestionarios from '@/components/ComponentsAdmin/CardCuestionarios.vue'
+  import CardClientes from '@/components/ComponentsAdmin/CardClientes.vue'
+  import CardUsuarios from '@/components/ComponentsAdmin/CardUsuarios.vue'
   export default {
     name: 'DashboardAdmin',
     components: {
       PanelAdmi,
+      ToDoList,
+      CardCuestionarios,
+      CardClientes,
+      CardUsuarios,
     },
   }
 </script>
+<style>
+.main-row {
+  padding: 15px;
+}
+
+.base-card {
+  overflow-y: scroll;
+  max-height: 80vh;
+  height: 300px;
+}
+
+</style>
