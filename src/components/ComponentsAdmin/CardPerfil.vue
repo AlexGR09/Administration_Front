@@ -9,18 +9,18 @@
       </v-toolbar>
       <v-tabs vertical>
         <v-tab>
-          Personal data
+          Datos de cliente
         </v-tab>
         <v-tab>
-          Account settings
+          Datos de establecimiento
         </v-tab>
         <v-tab>
-          User account
+          Documentación oficial
         </v-tab>
         <v-tab-item>
           <v-card flat>
             <v-card-title>
-              Personal data
+              Datos de cliente
             </v-card-title>
             <v-card-text>
               <v-form>
@@ -76,7 +76,7 @@
                 <v-text-field
                   label="Email"
                 ></v-text-field>
-                <v-btn color="primary">Save personal data</v-btn>
+                <v-btn color="primary">Guardar datos</v-btn>
               </v-form>
             </v-card-text>
           </v-card>
@@ -84,7 +84,7 @@
         <v-tab-item>
           <v-card flat>
             <v-card-title>
-              Language setting
+              Datos de establecimiento
             </v-card-title>
             <v-card-text>
               <v-form>
@@ -93,7 +93,7 @@
                   :items="['English', 'German']"
                   label="Language"
                 ></v-select>
-                <v-btn color="primary">Save account settings</v-btn>
+                <v-btn color="primary">Guardar datos</v-btn>
               </v-form>
              </v-card-text>
           </v-card>
@@ -101,7 +101,7 @@
         <v-tab-item>
           <v-card flat>
             <v-card-title>
-              Account setting
+              Documentación
             </v-card-title>
             <v-card-text>
               <v-form>
@@ -127,7 +127,7 @@
                   type="password"
                   append-icon="mdi-eye-off"
                 ></v-text-field>
-                <v-btn color="primary">Save new password</v-btn>
+                <v-btn color="primary">Guardar datos</v-btn>
               </v-form>
               </v-card-text>
            </v-card>
