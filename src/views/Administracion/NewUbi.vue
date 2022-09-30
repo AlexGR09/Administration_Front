@@ -49,7 +49,7 @@
                                       md="4"
                                     >
                                       <v-autocomplete
-                                        :items="characters"
+                                        :characters="characters"
                                         v-if="characters"
                                         dense
                                         filled

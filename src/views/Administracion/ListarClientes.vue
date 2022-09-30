@@ -1,134 +1,127 @@
 <template>
   <div>
-    <!--   -------------------------------Pruebas----------------------------- -->
     <v-card
-      max-width="1450"
-      class="mx-auto mt-16"
+      max-width="100%"
+      class="mx-auto mt-15"
     >
       <v-toolbar
-        color="primary"
+        color="cyan"
         dark
       >
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
         <v-toolbar-title>Lista de clientes</v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
       </v-toolbar>
-      <v-data-table
-        :headers="headers"
-        :items="desserts"
-        :items-per-page="5"
-        class="elevation-1"
-      ></v-data-table>
+      <v-list three-line>
+        <template v-for="(item, index) in items">
+          <v-subheader
+            v-if="item.header"
+            :key="item.header"
+            v-text="item.header"
+          ></v-subheader>
+          <v-divider
+            v-else-if="item.divider"
+            :key="index"
+            :inset="item.inset"
+          ></v-divider>
+          <v-list-item
+            v-else
+            :key="item.title"
+          >
+            <v-list-item-avatar>
+              <v-img :src="item.avatar"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title v-html="item.title"></v-list-item-title>
+              <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+            </v-list-item-content>
+            <v-list-item-action>
+              <v-dialog
+                v-model="dialog"
+                max-width="600px"
+              >
+        <template v-slot:activator="{ on, attrs }">
+           <v-btn
+            icon
+                  v-bind="attrs"
+            v-on="on"
+            >
+              <v-icon color="secondary">mdi-plus-circle</v-icon>
+            </v-btn>
+        </template>
+        <card-perfil />
+      </v-dialog>
+          </v-list-item-action>
+          </v-list-item>
+        </template>
+      </v-list>
     </v-card>
+    <br />
+    <v-pagination
+      v-model="page"
+      :length="6"
+    ></v-pagination>
     <panel-admi />
   </div>
 </template>
 <script>
-  import axios from 'axios'
-  import Vue from 'vue'
-  import Vuesax from 'vuesax'
-  import 'vuesax/dist/vuesax.css'
   import PanelAdmi from '@/components/ComponentsAdmin/PanelAdmi.vue'
-  Vue.use(Vuesax, {
-    // options here
-  })
+  import CardPerfil from '@/components/ComponentsAdmin/CardPerfil.vue'
   export default {
-    name: 'ListarClientes',
     components: {
       PanelAdmi,
+      CardPerfil,
     },
-    data () {
-      return {
-        headers: [
-          {
-            text: 'Nombre del cliente',
-            align: 'start',
-            value: 'name',
-          },
-          { text: 'Especialidad', value: 'especialidad' },
-          { text: 'Ubicación', value: 'ubicacion' },
-          { text: 'RFC', value: 'RFC' },
-        ],
-        desserts: [
-          {
-            name: 'Frozen Yogurt',
-            especialidad: 159,
-            ubicacion: 6.0,
-            RFC: 24,
-          },
-          {
-            name: 'Ice cream sandwich',
-            especialidad: 237,
-            ubicacion: 9.0,
-            RFC: 37,
-          },
-          {
-            name: 'Eclair',
-            especialidad: 262,
-            ubicacion: 16.0,
-            RFC: 23,
-          },
-          {
-            name: 'Cupcake',
-            especialidad: 305,
-            ubicacion: 3.7,
-            RFC: 67,
-          },
-          {
-            name: 'Gingerbread',
-            especialidad: 356,
-            ubicacion: 16.0,
-            RFC: 49,
-          },
-          {
-            name: 'Jelly bean',
-            especialidad: 375,
-            ubicacion: 0.0,
-            RFC: 94,
-          },
-          {
-            name: 'Lollipop',
-            especialidad: 392,
-            ubicacion: 0.2,
-            RFC: 98,
-          },
-          {
-            name: 'Honeycomb',
-            especialidad: 408,
-            ubicacion: 3.2,
-            RFC: 87,
-          },
-          {
-            name: 'Donut',
-            especialidad: 452,
-            ubicacion: 25.0,
-            RFC: 51,
-          },
-          {
-            name: 'KitKat',
-            especialidad: 518,
-            ubicacion: 26.0,
-            RFC: 65,
-          },
-        ],
-        characters: [],
-      }
-    },
-    mounted () {
-      console.log('verificando')
-      this.getTodos()
-    },
-    methods: {
-      getTodos () {
-        console.log('peticion GET')
-        axios.get('http://127.0.0.1:8000/api/test/')
-          .then(res => {
-            console.log(res)
-            this.characters = res.data.data
-          })
-          .catch(e => {
-            console.log(e)
-          })
-      },
-    },
+    data: () => ({
+      page: 1,
+      characters: [],
+      items: [
+        { header: 'Today' },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+          title: 'Brunch this weekend?',
+          subtitle: '<span class="text--primary">Ali Connors</span> &mdash; Ill be in your neighborhood doing errands this weekend. Do you want to hang out?',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+          title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
+          subtitle: '<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but Im out of town this weekend.',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+          title: 'Oui oui',
+          subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+          title: 'Birthday gift',
+          subtitle: '<span class="text--primary">Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+          title: 'Recipe to try',
+          subtitle: '<span class="text--primary">Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+          title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
+          subtitle: '<span class="text--primary">to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but Im out of town this weekend.',
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+          title: 'Oui oui',
+          subtitle: '<span class="text--primary">Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?',
+        },
+      ],
+    }),
   }
-  </script>
+</script>

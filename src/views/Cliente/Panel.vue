@@ -175,14 +175,12 @@
       CardUbicacion,
       EditarUbi,
     },
-
     data () {
       return {
         show: false,
         characters: [],
       }
     },
-
     mounted () {
       console.log('verificando')
       this.getTodos()
