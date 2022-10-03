@@ -6,6 +6,7 @@ import './plugins'
 import store from './store'
 import axios from 'axios'
 import { sync } from 'vuex-router-sync'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 Vue.config.productionTip = false
 

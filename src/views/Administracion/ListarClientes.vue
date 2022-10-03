@@ -41,7 +41,7 @@
             <v-list-item-action>
               <v-dialog
                 v-model="dialog"
-                max-width="600px"
+                max-width="800px"
               >
         <template v-slot:activator="{ on, attrs }">
            <v-btn
@@ -70,7 +70,9 @@
 <script>
   import PanelAdmi from '@/components/ComponentsAdmin/PanelAdmi.vue'
   import CardPerfil from '@/components/ComponentsAdmin/CardPerfil.vue'
+  import axios from 'axios'
   export default {
+    characters: [],
     components: {
       PanelAdmi,
       CardPerfil,
@@ -123,5 +125,22 @@
         },
       ],
     }),
+    mounted () {
+      console.log('verificando')
+      this.getTodos()
+    },
+    methods: {
+      getTodos () {
+        console.log('peticion GET')
+        axios.get('http://127.0.0.1:8000/api/test')
+          .then(res => {
+            console.log(res)
+            this.characters = res.data.data
+          })
+          .catch(e => {
+            console.log(e)
+          })
+      },
+    },
   }
 </script>
